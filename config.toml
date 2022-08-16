@@ -1,0 +1,6 @@
+baseURL = 'https://raymondzaagsma.github.io/'
+languageCode = 'en-us'
+title = 'OSD Blog'
+publishDir = "docs"
+
+theme='dimension'
