@@ -1,6 +1,6 @@
 baseURL = 'https://raymondzaagsma.github.io/'
 languageCode = 'en-us'
-title = 'OSD Blog'
+title = 'The Deployment Shark'
 publishDir = "docs"
 
 theme='dimension'
