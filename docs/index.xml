@@ -5,6 +5,34 @@
     <link>https://raymondzaagsma.github.io/</link>
     <description>Recent content on The Deployment Shark</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://raymondzaagsma.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 20 Aug 2022 13:36:04 +0200</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://raymondzaagsma.github.io/about/</link>
+      <pubDate>Sat, 20 Aug 2022 13:36:04 +0200</pubDate>
+      
+      <guid>https://raymondzaagsma.github.io/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>First</title>
+      <link>https://raymondzaagsma.github.io/posts/first/</link>
+      <pubDate>Sat, 20 Aug 2022 13:36:04 +0200</pubDate>
+      
+      <guid>https://raymondzaagsma.github.io/posts/first/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://raymondzaagsma.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://raymondzaagsma.github.io/contact/</guid>
+      <description>Want Contact? Have questions ask me on Twitter. or ask me on Linkedin.</description>
+    </item>
+    
   </channel>
 </rss>
