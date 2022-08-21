@@ -9,7 +9,7 @@ In order to add steps numbers to the task sequence you will have to modify the Z
 Make a copy of the ZTIUtility.vbs , then in the original ZTIUtility.vbs replace the code mentioned below.
 
 
-![Progrssbar with steps numbers](/posts/images/progressbar.JPG)
+![Progrssbar with steps numbers](/images/progressbar.JPG)
 
 
 
