@@ -18,5 +18,18 @@ Make a copy of the ZTIUtility.vbs , then in the original ZTIUtility.vbs replace 
 Original ReportProgress Function in ZTIUtility.vbs Public Function ReportProgress(sMsg, iPercent) Dim iMaxPercent Dim oProgress Dim uStep Dim uMaxStep CreateEntry &amp;#34;Update progress [ &amp;#34; &amp;amp; iPercent &amp;amp; &amp;#34; ] : &amp;#34; &amp;amp; sMsg , LogTypeVerbose &amp;#39; Try to create the progress UI object On Error Resume Next Set oProgress = CreateObject(&amp;#34;Microsoft.</description>
     </item>
     
+    <item>
+      <title>Dirty Environment</title>
+      <link>https://raymondzaagsma.github.io/posts/dirty_enviromnet/</link>
+      <pubDate>Sat, 20 Aug 2022 13:36:04 +0200</pubDate>
+      
+      <guid>https://raymondzaagsma.github.io/posts/dirty_enviromnet/</guid>
+      <description>Sometimes MDT deployments fail and leave the disk in a dirty (failed) state, whem you choose yes and the task sequence failes try the following solution.
+Press F8 (opens a CMD window)
+Unplug any USB drives or other mass storage devices - you should end up with just the internal hard drive left (CD/DVD drives don&amp;rsquo;t count here)
+In the CMD window enter: DiskPart (launches the Disk Partitioning window)
+In the DiskPart window enter: list disk (this will show you a list of discs available)</description>
+    </item>
+    
   </channel>
 </rss>
