@@ -64,6 +64,16 @@ $installedPackageProvider = Get-PackageProvider if ($installedPackageProvider.Na
     </item>
     
     <item>
+      <title>PSADT Cheatsheet</title>
+      <link>https://raymondzaagsma.github.io/posts/psadt_cheatsheet/</link>
+      <pubDate>Sat, 20 Aug 2022 13:36:04 +0200</pubDate>
+      
+      <guid>https://raymondzaagsma.github.io/posts/psadt_cheatsheet/</guid>
+      <description>These are code snippits, I frequently use in PSADT - PowerShell App Deployment Toolkit
+Commonly used PSADT env variables $envCommonDesktop # C:\Users\Public\Desktop $envCommonStartMenuPrograms # C:\ProgramData\Microsoft\Windows\Start Menu\Programs $envProgramFiles # C:\Program Files $envProgramFilesX86 # C:\Program Files (x86) $envProgramData # c:\ProgramData $envUserDesktop # c:\Users\{user currently logged in}\Desktop $envUserStartMenuPrograms # c:\Users\{user currently logged in}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs $envSystemDrive # c: $envWinDir # c:\windows How to load (&amp;ldquo;dotsource&amp;rdquo;) PSADT functions/variables for manual testing (your powershell window must be run as administrator first) cd &amp;#34;$path_to_PSADT_folder_youre_working_from&amp;#34; .</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://raymondzaagsma.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

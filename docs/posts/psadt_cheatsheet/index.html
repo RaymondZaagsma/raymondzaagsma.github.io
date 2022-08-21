@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="The Deployment Shark">
+    <meta name="description" content="https://raymondzaagsma.github.io/">
+    <meta name="keywords" content="blog">
+
+    <meta property="og:site_name" content="The Deployment Shark">
+    <meta property="og:title" content="
+  PSADT Cheatsheet - The Deployment Shark
+">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://raymondzaagsma.github.io/posts/psadt_cheatsheet/">
+    <meta property="og:image" content="https://raymondzaagsma.github.io/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="https://raymondzaagsma.github.io/posts/psadt_cheatsheet/">
+    <meta name="twitter:image" content="https://raymondzaagsma.github.io/">
+
+    <base href="https://raymondzaagsma.github.io/posts/psadt_cheatsheet/">
+    <title>
+  PSADT Cheatsheet - The Deployment Shark
+</title>
+
+    <link rel="canonical" href="https://raymondzaagsma.github.io/posts/psadt_cheatsheet/">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="/css/normalize.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    
+      <link rel="alternate" href="https://raymondzaagsma.github.io/index.xml" type="application/rss+xml" title="The Deployment Shark">
+      <link href="https://raymondzaagsma.github.io/index.xml" rel="feed" type="application/rss+xml" title="The Deployment Shark" />
+    
+
+    <meta name="generator" content="Hugo 0.101.0" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">The Deployment Shark</a>
+    <input type="checkbox" id="menu-control"/>
+    <label class="menu-mobile  float-right " for="menu-control">
+      <span class="btn-mobile  float-right ">&#9776;</span>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="https://raymondzaagsma.github.io/about">About</a>
+            </li>
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="https://raymondzaagsma.github.io/posts">Blog</a>
+            </li>
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="https://raymondzaagsma.github.io/contact">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    </label>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">PSADT Cheatsheet</h1>
+      <h2 class="date">August 20, 2022</h2>
+
+      
+    </header>
+
+    <p>These are code snippits, I frequently use in <a href="https://psappdeploytoolkit.com/" title="PSADT - PowerShell App Deployment Toolkit">PSADT - PowerShell App Deployment Toolkit</a></p>
+<h5 id="commonly-used-psadt-env-variables">Commonly used PSADT env variables</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$envCommonDesktop           # C:\Users\Public\Desktop
+</span></span><span class="line"><span class="cl">$envCommonStartMenuPrograms # C:\ProgramData\Microsoft\Windows\Start Menu\Programs
+</span></span><span class="line"><span class="cl">$envProgramFiles            # C:\Program Files
+</span></span><span class="line"><span class="cl">$envProgramFilesX86         # C:\Program Files (x86)
+</span></span><span class="line"><span class="cl">$envProgramData             # c:\ProgramData
+</span></span><span class="line"><span class="cl">$envUserDesktop             # c:\Users\{user currently logged in}\Desktop
+</span></span><span class="line"><span class="cl">$envUserStartMenuPrograms   # c:\Users\{user currently logged in}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
+</span></span><span class="line"><span class="cl">$envSystemDrive             # c:
+</span></span><span class="line"><span class="cl">$envWinDir                  # c:\windows
+</span></span></code></pre></div><h5 id="how-to-load-dotsource-psadt-functionsvariables-for-manual-testing-your-powershell-window-must-be-run-as-administrator-first">How to load (&ldquo;dotsource&rdquo;) PSADT functions/variables for manual testing (your powershell window must be run as administrator first)</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd &#34;$path_to_PSADT_folder_youre_working_from&#34;
+</span></span><span class="line"><span class="cl">. .\AppDeployToolkit\AppDeployToolkitMain.ps1
+</span></span></code></pre></div><h5 id="examples-of-exe-install">Examples of exe install</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Execute-Process -Path &#39;&lt;application&gt;.exe&#39; -Parameters &#39;/quiet&#39; -WaitForMsiExec:$true  
+</span></span><span class="line"><span class="cl">Execute-Process -Path &#34;$dirFiles\DirectX\DXSetup.exe&#34; -Parameters &#39;/silent&#39; -WindowStyle &#39;Hidden&#39;  
+</span></span></code></pre></div><h5 id="open-notepad-dont-wait-for-it-to-close-before-proceeding-ie-continue-with-script">open notepad, don&rsquo;t wait for it to close before proceeding (i.e. continue with script)</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Execute-Process -Path &#34;$envSystemRoot\notepad.exe&#34; -NoWait  
+</span></span></code></pre></div><h5 id="execute-an-exe-and-hide-confidential-parameters-from-log-file">Execute an .exe, and hide confidential parameters from log file</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$serialisation_params = &#39;-batchmode -quit -serial &lt;aa-bb-cc-dd-ee-ffff11111&gt; -username &#34;&lt;serialisation username&gt;&#34; -password &#34;SuperSecret123&#34;&#39;  
+</span></span><span class="line"><span class="cl">Execute-Process -Path &#34;$envProgramFiles\Application\Serialise.exe&#34; -Parameters &#34;$serialisation_params&#34; -SecureParameters:$True  
+</span></span></code></pre></div><h5 id="example-to-install-an-msi">Example to install an msi</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Execute-MSI -Action &#39;Install&#39; -Path &#34;$dirFiles\&lt;application&gt;.msi&#34; -Parameters &#39;REBOOT=ReallySuppress /QN&#39;
+</span></span><span class="line"><span class="cl">Execute-MSI -Action &#39;Install&#39; -Path &#39;Discovery 2015.1.msi&#39;
+</span></span></code></pre></div><h5 id="msi-install--transform-file">MSI install + transform file</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Execute-MSI -Action &#39;Install&#39; -Path &#39;Adobe_Reader_11.0.0_EN.msi&#39; -Transform &#39;Adobe_Reader_11.0.0_EN_01.mst&#39;
+</span></span></code></pre></div><h5 id="install-a-patch">Install a patch</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Execute-MSI -Action &#39;Patch&#39; -Path &#39;Adobe_Reader_11.0.3_EN.msp&#39;
+</span></span></code></pre></div><h5 id="to-uninstall-an-msi">To uninstall an MSI</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Execute-MSI -Action Uninstall -Path &#39;{5708517C-59A3-45C6-9727-6C06C8595AFD}&#39;
+</span></span></code></pre></div><h5 id="uninstall-a-number-of-msi-codes">Uninstall a number of msi codes</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;{2E873893-A883-4C06-8308-7B491D58F3D6}&#34;, &lt;# Example #&gt;`
+</span></span><span class="line"><span class="cl">&#34;{2E873893-A883-4C06-8308-7B491D58F3D6}&#34;, &lt;# Example #&gt;`
+</span></span><span class="line"><span class="cl">&#34;{2E873893-A883-4C06-8308-7B491D58F3D6}&#34;, &lt;# Example #&gt;`
+</span></span><span class="line"><span class="cl">&#34;{2E873893-A883-4C06-8308-7B491D58F3D6}&#34;, &lt;# Example #&gt;`
+</span></span><span class="line"><span class="cl">&#34;{2E873893-A883-4C06-8308-7B491D58F3D6}&#34;, &lt;# Example #&gt;`
+</span></span><span class="line"><span class="cl">&#34;{B234DC00-1003-47E7-8111-230AA9E6BF10}&#34; &lt;# Last example cannot have a comma after the double quotes #&gt;`
+</span></span><span class="line"><span class="cl">| % { Execute-MSI -Action &#39;Uninstall&#39; -Path &#34;$_&#34; } &lt;# foreach item, uninstall #&gt;
+</span></span></code></pre></div><h5 id="run-a-vbscript">Run a vbscript</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Execute-Process -Path &#34;cscript.exe&#34; -Parameters &#34;$dirFiles\whatever.vbs&#34;
+</span></span></code></pre></div><h5 id="copy-a-file-to-the-correct-relative-location-for-all-user-accounts">Copy a file to the correct relative location for all user accounts</h5>
+<p>grabbed from here: <a href="http://psappdeploytoolkit.com/forums/topic/copy-file-to-all-users-currently-logged-in-and-for-all-future-users/">http://psappdeploytoolkit.com/forums/topic/copy-file-to-all-users-currently-logged-in-and-for-all-future-users/</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ProfilePaths = Get-UserProfiles | Select-Object -ExpandProperty &#39;ProfilePath&#39;
+</span></span><span class="line"><span class="cl">ForEach ($Profile in $ProfilePaths) {
+</span></span><span class="line"><span class="cl">    Copy-File -Path &#34;$dirFiles\Example\example.ini&#34; -Destination &#34;$Profile\Example\To\Path\&#34;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></div><h5 id="remove-registry-key">Remove registry key</h5>
+<h6 id="these-are-to-delete-the-whole-folder-reg-key">these are to delete the whole &lsquo;folder&rsquo; reg key</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Remove-RegistryKey -Key &#39;HKEY_LOCAL_MACHINE\SOFTWARE\Macromedia\FlashPlayer\SafeVersions&#39; -Recurse  
+</span></span><span class="line"><span class="cl">Remove-RegistryKey -Key &#39;HKLM:SOFTWARE\Macromedia\FlashPlayer\SafeVersions&#39; -Recurse  
+</span></span></code></pre></div><h6 id="this-is-to-remove-a-specific-reg-key-item-from-within-a-folder">This is to remove a specific reg key item from within a &lsquo;folder&rsquo;</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Remove-RegistryKey -Key &#39;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&#39; -Name &#39;RunAppInstall&#39;  
+</span></span><span class="line"><span class="cl">Remove-RegistryKey -Key &#39;HKLM:SOFTWARE\Microsoft\Windows\CurrentVersion\Run&#39; -Name &#39;RunAppInstall&#39;  
+</span></span></code></pre></div><h5 id="create-a-reg-key">Create a reg key</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Set-RegistryKey -Key &#39;HKEY_LOCAL_MACHINE\SOFTWARE\LMKR\Licensing&#39; -Name &#39;LMKR_LICENSE_FILE&#39; -Value &#39;@license&#39;-Type String -ContinueOnError:$True
+</span></span></code></pre></div><h5 id="to-set-an-hkcu-key-for-all-users-including-default-profile">To set an HKCU key for all users including default profile</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[scriptblock]$HKCURegistrySettings = {  
+</span></span><span class="line"><span class="cl">    # I included both to illustrate that HKCU\ is an acceptable abbreviation
+</span></span><span class="line"><span class="cl">    Set-RegistryKey -Key &#39;HKEY_CURRENT_USER\SOFTWARE\Classes\AppX4hxtad77fbk3jkkeerkrm0ze94wjf3s9&#39; -Name &#39;NoOpenWith&#39; -Value &#39;&#34;&#34;&#39;-Type String -ContinueOnError:$True -SID $UserProfile.SID  
+</span></span><span class="line"><span class="cl">    Set-RegistryKey -Key &#39;HKCU\Software\Microsoft\Office\14.0\Common&#39; -Name &#39;qmenable&#39; -Value 0 -Type DWord -SID $UserProfile.SID  
+</span></span><span class="line"><span class="cl">}  
+</span></span><span class="line"><span class="cl">Invoke-HKCURegistrySettingsForAllUsers -RegistrySettings $HKCURegistrySettings  
+</span></span></code></pre></div><h5 id="import-a-reg-key-useful-if-theres-a-butt-tonne-of-nested-keysetc">import a .reg key, useful if there&rsquo;s a butt-tonne of nested keys/etc</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Execute-Process -FilePath &#34;reg.exe&#34; -Parameters &#34;IMPORT `&#34;$dirFiles\name-of-reg-export.reg`&#34;&#34; -PassThru
+</span></span></code></pre></div><h5 id="to-pause-script-for-x-time">To pause script for <!-- raw HTML omitted --> time</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Start-Sleep -Seconds 120
+</span></span></code></pre></div><h5 id="to-copy-and-overwrite-a-file">To copy and overwrite a file</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Copy-File -Path &#34;$dirSupportFiles\mms.cfg&#34; -Destination &#34;C:\Windows\SysWOW64\Macromed\Flash\mms.cfg&#34;
+</span></span></code></pre></div><h5 id="to-copy-a-file">To copy a file</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Copy-File -Path &#34;$dirSupportFiles\mms.cfg&#34; -Destination &#34;C:\Windows\SysWOW64\Macromed\Flash\&#34;
+</span></span></code></pre></div><h5 id="to-copy-a-folder">To copy a folder</h5>
+<h6 id="pls-note-the-destination-should-be-the-parent-folder-not-the-folder-name-you-want-it-to-be">pls note the destination should be the PARENT folder, not the folder name you want it to be.</h6>
+<h6 id="for-example-youd-copy-mozilla-firefox-to-cprogram-files-if-you-were-wanting-to-copy-the-application-files">for example, you&rsquo;d copy &ldquo;mozilla firefox&rdquo; to &ldquo;c:\program files&rdquo;, if you were wanting to copy the application files.</h6>
+<h6 id="if-copying-to-root-of-c-include-trailing-slash---ie-envsystemdrive-not-envsystemdrive-or-c">if copying to root of c:, include trailing slash - i.e. &ldquo;$envSystemDrive&quot; not &ldquo;$envSystemDrive&rdquo; or &ldquo;c:&rdquo;</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Copy-File -Path &#34;$dirFiles\client_1&#34; -Destination &#34;C:\oracle\product\11.2.0\&#34; -Recurse
+</span></span></code></pre></div><h6 id="to-delete-a-file-or-shortcut">To delete a file or shortcut</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Remove-File -Path &#34;$envCommonDesktop\GeoGraphix Seismic Modeling.lnk&#34;
+</span></span></code></pre></div><h5 id="remove-a-bunch-of-specific-files">Remove a bunch of specific files</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;$envCommonDesktop\Example 1.lnk&#34;, &lt;# Example #&gt;`
+</span></span><span class="line"><span class="cl">&#34;$envCommonDesktop\Example 2.lnk&#34;, &lt;# Example #&gt;`
+</span></span><span class="line"><span class="cl">&#34;$envCommonDesktop\Example 3.lnk&#34; &lt;# Careful with the last item to not include a comma after the double quote #&gt;`
+</span></span><span class="line"><span class="cl">| % { Remove-File -Path &#34;$_&#34; }
+</span></span></code></pre></div><h5 id="remove-a-bunch-of-specific-folders-and-their-contents">Remove a bunch of specific folders and their contents</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;$envSystemDrive\Example Dir1&#34;,  &lt;# Example #&gt;`
+</span></span><span class="line"><span class="cl">&#34;$envProgramFiles\Example Dir2&#34;,  &lt;# Example #&gt;`
+</span></span><span class="line"><span class="cl">&#34;$envProgramFiles\Example Dir3&#34;,  &lt;# Example #&gt;`
+</span></span><span class="line"><span class="cl">&#34;$envProgramFilesX86\Example Dir4&#34;,  &lt;# Example #&gt;`
+</span></span><span class="line"><span class="cl">&#34;$envSystemRoot\Example4&#34; &lt;# Careful with the last item to not include a comma after the double quote #&gt;``
+</span></span><span class="line"><span class="cl">| % { Remove-Folder -Path &#34;$_&#34; }
+</span></span></code></pre></div><h5 id="remove-a-bunch-of-specific-folders-only-if-theyre-empty">Remove a bunch of specific folders, only if they&rsquo;re empty</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;# Use this by specifying folders from &#34;deepest folder level&#34; to &#34;most shallow folder level&#34; order e.g.
+</span></span><span class="line"><span class="cl">c:\program files\vendor\app\v12\junk - then 
+</span></span><span class="line"><span class="cl">c:\program files\vendor\app\v12 - then
+</span></span><span class="line"><span class="cl">c:\program files\vendor\app - then
+</span></span><span class="line"><span class="cl">c:\program files\vendor
+</span></span><span class="line"><span class="cl">using the above example, it will only remove c:\program files\vendor if every other folder above is completely empty. 
+</span></span><span class="line"><span class="cl">if for example v11 was also installed, it would stop prior #&gt;
+</span></span><span class="line"><span class="cl">(
+</span></span><span class="line"><span class="cl">    &#34;$envProgramFiles\vendor\app\v12\junk&#34;,
+</span></span><span class="line"><span class="cl">    &#34;$envProgramFiles\vendor\app\v12&#34;,
+</span></span><span class="line"><span class="cl">    &#34;$envProgramFiles\vendor\app&#34;,
+</span></span><span class="line"><span class="cl">    &#34;$envProgramFiles\vendor&#34;,
+</span></span><span class="line"><span class="cl">    &#34;$envProgramFilesX86\vendor\app\v12\junk&#34;,
+</span></span><span class="line"><span class="cl">    &#34;$envProgramFilesX86\vendor\app\v12&#34;,
+</span></span><span class="line"><span class="cl">    &#34;$envProgramFilesX86\vendor\app&#34;,
+</span></span><span class="line"><span class="cl">    &#34;$envProgramFilesX86\vendor&#34; &lt;# careful not to include the comma after the double quotes in this one #&gt;
+</span></span><span class="line"><span class="cl">) | % { if (!(Test-Path -Path &#34;$_\*&#34;)) { Remove-Folder -Path &#34;$_&#34; } }
+</span></span><span class="line"><span class="cl">    # for each piped item, if the folder specified DOES NOT have contents ($folder\*), remove the folder 
+</span></span></code></pre></div><h5 id="import-a-certificate-to-system-trusted-publishers-store-helpful-for-clickonce-installers--importing-drivers">Import a certificate to system &lsquo;Trusted Publishers&rsquo; store.. helpful for clickOnce installers &amp; importing drivers</h5>
+<h6 id="for-references-sake-i-saved-as-base64-unsure-if-der-encoded-certs-work">(for references sake, I saved as base64, unsure if DER encoded certs work)</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Execute-Process -Path &#34;certutil.exe&#34; -Parameters &#34;-f -addstore -enterprise TrustedPublisher `&#34;$dirFiles\certname.cer`&#34;&#34;
+</span></span><span class="line"><span class="cl">Write-Log -Message &#34;Imported Cert&#34; -Source $deployAppScriptFriendlyName
+</span></span></code></pre></div><h5 id="import-a-driver-note--win7-must-be-signed-and-cert-must-be-in-trusted-publishers-store">Import a driver (note, &gt;= win7 must be signed, and cert must be in trusted publishers store)</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Execute-Process -Path &#39;PnPutil.exe&#39; -Parameters &#34;/a `&#34;$dirFiles\USB Drivers\driver.inf`&#34;&#34;
+</span></span></code></pre></div><h5 id="register-a-dll-module">Register a DLL module</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Execute-Process -FilePath &#34;regsvr32.exe&#34; -Parameters &#34;/s `&#34;$dirFiles\example\codec.dll`&#34;&#34;
+</span></span></code></pre></div><h6 id="make-an-install-marker-reg-key-for-custom-detections">Make an install marker reg key for custom detections</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#for e.g. below would create something like:
+</span></span><span class="line"><span class="cl">#HKLM:\SOFTWARE\PSAppDeployToolkit\InstallMarkers\Microsoft_KB2921916_1.0_x64_EN_01
+</span></span><span class="line"><span class="cl">Set-RegistryKey -Key &#34;$configToolkitRegPath\$appDeployToolkitName\InstallMarkers\$installName&#34;
+</span></span></code></pre></div><h5 id="while-loop-pause-incase-app-installer-exits-immediately">While loop pause (incase app installer exits immediately)</h5>
+<h6 id="pause-until-example-reg-key">pause until example reg key</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">While(!(test-path -path &#34;HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{product-code-hereD}&#34;)) {
+</span></span><span class="line"><span class="cl">                sleep 5;
+</span></span><span class="line"><span class="cl">                Write-Log -Message &#34;$appVendor - $appName - $appVersion is still not finished installing, sleeping another 5&#34; -Source $deployAppScriptFriendlyName;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></div><h6 id="pause-until-example-file">pause until example file</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">While(!(test-path -path &#34;$envCommonDesktop\Example Shortcut.lnk&#34;)) {
+</span></span><span class="line"><span class="cl">                sleep 5;
+</span></span><span class="line"><span class="cl">                Write-Log -Message &#34;$appVendor - $appName - $appVersion is still not finished installing, sleeping another 5&#34; -Source $deployAppScriptFriendlyName;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></div><h5 id="to-create-a-shortcut">To Create a shortcut</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">New-Shortcut -Path &#34;$envCommonStartMenuPrograms\My Shortcut.lnk&#34; `
+</span></span><span class="line"><span class="cl">    -TargetPath &#34;$envWinDir\system32\notepad.exe&#34; `
+</span></span><span class="line"><span class="cl">    -Arguments &#34;--example-argument --example-argument-two&#34; `
+</span></span><span class="line"><span class="cl">    -Description &#39;Notepad&#39; `
+</span></span><span class="line"><span class="cl">    -WorkingDirectory &#34;$envHomeDrive\$envHomePath&#34;
+</span></span></code></pre></div><h5 id="modify-acl-on-a-file">Modify ACL on a file</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#first load the ACL
+</span></span><span class="line"><span class="cl">$acl_to_modify = &#34;$envProgramData\Example\File.txt&#34;
+</span></span><span class="line"><span class="cl">$acl = Get-Acl &#34;$acl_to_modify&#34;
+</span></span><span class="line"><span class="cl">#add another entry to the ACL list (in this case, add all users to have full control)
+</span></span><span class="line"><span class="cl">$ar = New-Object System.Security.AccessControl.FileSystemAccessRule(&#34;BUILTIN\Users&#34;, &#34;FullControl&#34;, &#34;None&#34;, &#34;None&#34;, &#34;Allow&#34;)
+</span></span><span class="line"><span class="cl">$acl.SetAccessRule($ar)
+</span></span><span class="line"><span class="cl">#re-write the acl on the target file
+</span></span><span class="line"><span class="cl">Set-Acl &#34;$acl_to_modify&#34; $acl
+</span></span></code></pre></div><h5 id="modify-acl-on-a-folder">Modify ACL on a folder</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$folder_to_change = &#34;$envSystemDrive\Example_Folder&#34;
+</span></span><span class="line"><span class="cl">$acl = Get-Acl &#34;$folder_to_change&#34;
+</span></span><span class="line"><span class="cl">$ar = New-Object System.Security.AccessControl.FileSystemAccessRule(&#34;BUILTIN\Users&#34;, &#34;FullControl&#34;, &#34;ContainerInherit,ObjectInherit&#34;, &#34;None&#34;, &#34;Allow&#34;)
+</span></span><span class="line"><span class="cl">$acl.SetAccessRule($ar)
+</span></span><span class="line"><span class="cl">Set-Acl &#34;$folder_to_change&#34; $acl
+</span></span></code></pre></div><h5 id="add-to-environment-variables-specifically-path-in-this-case">Add to environment variables (specifically PATH in this case)</h5>
+<h6 id="the-first-input-in-the-net-code-can-have-path-subtituted-for-any-other-environemnt-variable-name-gci-env-to-see-what-is-presently-set">The first input in the .NET code can have Path subtituted for any other environemnt variable name (gci env: to see what is presently set)</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$path_addition = &#34;C:\bin&#34;
+</span></span></code></pre></div><h5 id="add-path_addition-to-permanent-system-wide-path">add $path_addition to permanent system wide path</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Environment]::SetEnvironmentVariable(&#34;Path&#34;, $env:Path + &#34;;&#34; + $path_addition, &#34;Machine&#34;)
+</span></span></code></pre></div><h6 id="add-path_addition-to-permanent-user-specific-path">add $path_addition to permanent user specific path</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Environment]::SetEnvironmentVariable(&#34;Path&#34;, $env:Path + &#34;;&#34; + $path_addition, &#34;User&#34;)
+</span></span></code></pre></div><h6 id="add-path_addition-to-the-process-level-path-only-ie-when-you-quit-script-it-will-no-longer-be-applied">add $path_addition to the process level path only (i.e. when you quit script, it will no longer be applied)</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Environment]::SetEnvironmentVariable(&#34;Path&#34;, $env:Path + &#34;;&#34; + $path_addition, &#34;Process&#34;)  
+</span></span></code></pre></div><h5 id="net-4x-comparisoninstall">.NET 4.x comparison/install</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$version_we_require = [version]&#34;4.5.2&#34;
+</span></span><span class="line"><span class="cl">$version_we_want_path = &#34;$dirFiles\NDP452-KB2901907-x86-x64-AllOS-ENU.exe&#34;
+</span></span><span class="line"><span class="cl">$install_params = &#34;/q /norestart&#34;
+</span></span><span class="line"><span class="cl">if((Get-RegistryKey &#34;HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full&#34; -Value Version) -lt $version_we_require) {
+</span></span><span class="line"><span class="cl">    Write-Log -Source $deployAppScriptFriendlyName -Message &#34;.NET version is &lt; [string]$version_we_require, installing&#34;
+</span></span><span class="line"><span class="cl">    Execute-Process -Path &#34;$version_we_want_path&#34; -Parameters &#34;$install_params&#34; -WaitForMSIExec:$true
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></div><h5 id="exit-codes-for-reboot-required">exit codes for reboot required</h5>
+<h6 id="soft-reboot---will-not-force-restart-and-sccm-will-progress-past-but-will-nag-to-restart-afterward">soft reboot &lt;- will not &lsquo;force&rsquo; restart, and sccm will progress past, but will nag to restart afterward</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Exit-Script -ExitCode 3010
+</span></span></code></pre></div><h6 id="hard-reboot---does-not-force-restart-but-sccm-wont-proceed-past-any-pre-reqs-without-reboot">hard reboot &lt;- does not &lsquo;force&rsquo; restart, but sccm won&rsquo;t proceed past any pre-reqs without reboot</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Exit-Script -ExitCode 1641
+</span></span></code></pre></div><h5 id="create-active-setup-to-run-once-per-user-and-run-an-arbitrary-executable-as-the-user">Create Active Setup to run once per user, and run an arbitrary executable as the user</h5>
+<h6 id="warning-this-really-isnt-a-recommended-method-for-a-number-of-reasons">WARNING this really isn&rsquo;t a recommended method for a number of reasons.</h6>
+<h6 id="1-you-must-logoff-a-logged-in-user-for-them-to-run-this">1. You must logoff a logged in user for them to run this</h6>
+<h6 id="2-activesetup-is-not-syncronous-and-will-hold-up-the-user-login-process-until-the-command-completes">2. Activesetup is not syncronous and will hold up the user login process until the command completes</h6>
+<h6 id="if-the-executable-requests-user-input-you-can-prevent-logins">If the executable requests user input you can prevent logins</h6>
+<h6 id="3-its-slow">3. It&rsquo;s slow</h6>
+<h6 id="youre-better-off-using-a-scheduled-task-or-capturing-what-the-executable-does-and-doing-it-another-way">You&rsquo;re better off using a scheduled task, or capturing what the executable does and doing it another way</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Copy-File -Path &#34;$dirFiles\Example.exe&#34; -Destination &#34;$envProgramData\Example&#34;
+</span></span><span class="line"><span class="cl">Set-ActiveSetup -StubExePath &#34;$envProgramData\Example\Example.exe&#34; `
+</span></span><span class="line"><span class="cl">    -Description &#39;AutoDesk BIM Glue install&#39; `
+</span></span><span class="line"><span class="cl">    -Key &#39;Autodesk_BIM_Glue_Install&#39; `
+</span></span><span class="line"><span class="cl">    -ContinueOnError:$true 
+</span></span></code></pre></div><h5 id="create-an-activesetup-to-run-once-per-user-to-import-a-reg-file">Create an activesetup to run once per user, to import a .reg file</h5>
+<h6 id="warning-this-really-isnt-a-recommended-method-for-a-number-of-reasons-1">WARNING this really isn&rsquo;t a recommended method for a number of reasons.</h6>
+<h6 id="1-you-must-logoff-a-logged-in-user-for-them-to-run-this-1">1. You must logoff a logged in user for them to run this</h6>
+<h6 id="2-activesetup-is-not-syncronous-and-will-hold-up-the-user-login-process-until-the-command-completes-1">2. Activesetup is not syncronous and will hold up the user login process until the command completes</h6>
+<h6 id="if-the-executable-requests-user-input-you-can-prevent-logins-1">If the executable requests user input you can prevent logins</h6>
+<h6 id="3-its-slow-1">3. It&rsquo;s slow</h6>
+<h6 id="youre-better-off-using-a-scheduled-task-or-capturing-what-the-executable-does-and-doing-it-another-way-1">You&rsquo;re better off using a scheduled task, or capturing what the executable does and doing it another way</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Copy-File -Path &#34;$dirFiles\many_registry_keys_for_app_x.reg&#34; -Destination &#34;$envProgramData\Hidden\Path&#34;
+</span></span><span class="line"><span class="cl">Set-ActiveSetup -StubExePath &#34;reg.exe IMPORT `&#34;$envProgramData\Hidden\Path\many_registry_keys_for_app_x.reg`&#34;&#34; `
+</span></span><span class="line"><span class="cl">    -Description &#39;My undesirable way of applying registry keys&#39; `
+</span></span><span class="line"><span class="cl">    -Key &#39;Undesirable_Reg_keys&#39; `
+</span></span><span class="line"><span class="cl">    -ContinueOnError:$true
+</span></span></code></pre></div><h5 id="function-to-assist-finding-uninstall-strings-msi-codes-display-names-of-installed-applications">function to assist finding uninstall strings, msi codes, display names of installed applications</h5>
+<h6 id="paste-into-powershell-window-or-save-in-powershell-profilehttpwwwhowtogeekcom50236customizing-your-powershell-profile">paste into powershell window (or save in (powershell profile)[http://www.howtogeek.com/50236/customizing-your-powershell-profile/]</h6>
+<h6 id="usage-once-loaded-get-uninstaller-chrome">usage once loaded: &lsquo;Get-Uninstaller chrome&rsquo;</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">function Get-Uninstaller {
+</span></span><span class="line"><span class="cl">  [CmdletBinding()]
+</span></span><span class="line"><span class="cl">  param(
+</span></span><span class="line"><span class="cl">    [Parameter(Mandatory = $true)]
+</span></span><span class="line"><span class="cl">    [ValidateNotNullOrEmpty()]
+</span></span><span class="line"><span class="cl">    [string] $Name
+</span></span><span class="line"><span class="cl">  )
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">  $local_key     = &#39;HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*&#39;
+</span></span><span class="line"><span class="cl">  $machine_key32 = &#39;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*&#39;
+</span></span><span class="line"><span class="cl">  $machine_key64 = &#39;HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*&#39;
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">  $keys = @($local_key, $machine_key32, $machine_key64)
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">  Get-ItemProperty -Path $keys -ErrorAction &#39;SilentlyContinue&#39; | ?{ ($_.DisplayName -like &#34;*$Name*&#34;) -or ($_.PsChildName -like &#34;*$Name*&#34;) } | Select-Object PsPath,DisplayVersion,DisplayName,UninstallString,InstallSource,InstallLocation,QuietUninstallString,InstallDate
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">## end of function
+</span></span></code></pre></div>
+  </article>
+
+  <br/>
+
+  
+  
+</section>
+
+      </div>
+      
+        <footer class="footer">
+  <section class="container">
+    
+      <div class="sns-shares sp-sns-shares">
+        
+          <a class="sns-share twitter-share" href="https://twitter.com/intent/tweet?original_referer=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fpsadt_cheatsheet%2f&ref_src=twsrc%5Etfw&text=PSADT%20Cheatsheet The%20Deployment%20Shark&tw_p=tweetbutton&url=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fpsadt_cheatsheet%2f"><i class="fab fa-twitter"></i></a>
+        
+        
+        
+        
+        
+          <a class="sns-share linkedIn-share" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fpsadt_cheatsheet%2f"><i class="fab fa-linkedin"></i></a>
+        
+      </div>
+    
+    
+      <p>The Deployment Shark</p>
+    
+     © 2022    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/naro143/hugo-coder-portfolio">CoderPortfolio</a>. 
+
+  </section>
+</footer>
+<div class="fixed-bar">
+  <section class="container">
+    
+      <p id="privateTriggerText">Do you want to know me more private?→<a id="privateTrigger">Click!</a></p>
+    
+    
+      <div class="sns-shares pc-sns-shares">
+        
+          <a class="sns-share twitter-share" href="https://twitter.com/intent/tweet?original_referer=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fpsadt_cheatsheet%2f&ref_src=twsrc%5Etfw&text=PSADT%20Cheatsheet The%20Deployment%20Shark&tw_p=tweetbutton&url=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fpsadt_cheatsheet%2f"><i class="fab fa-twitter"></i></a>
+        
+        
+        
+        
+        
+          <a class="sns-share linkedIn-share" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fpsadt_cheatsheet%2f"><i class="fab fa-linkedin"></i></a>
+        
+      </div>
+    
+  </section>
+</div>
+
+      
+    </main>
+
+    
+
+  <script src="/js/app.js"></script>
+  
+  <script>
+  (function($) {
+    $(function() {
+      $('#privateTrigger').on('click', function() {
+        $('.private').slideToggle();
+        $('#privateTriggerText').text("Thank You! Please share it if you like it→");
+      });
+    });
+   })(jQuery);
+  </script>
+  
+  </body>
+</html>
