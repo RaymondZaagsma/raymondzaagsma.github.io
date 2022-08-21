@@ -74,7 +74,7 @@ disqusShortname = "yourdiscussshortname"
         # You can configure the theme parameter for each language.
         [languages.en.params]
             author = "The Deployment Shark"
-            info = "MDT AVD PSADT MEM Winget AIB"
+            info = "MDT AVD PSADT MEM Winget AIB Liquit"
             description = "Raymond Zaagsma Blog Website"
             keywords = "blog"
 
