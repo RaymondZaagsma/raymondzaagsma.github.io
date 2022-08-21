@@ -8,12 +8,14 @@
     <language>en</language>
     <lastBuildDate>Sat, 20 Aug 2022 13:36:04 +0200</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First</title>
-      <link>https://raymondzaagsma.github.io/posts/first/</link>
+      <title>Add Steps numbers to Task Sequence</title>
+      <link>https://raymondzaagsma.github.io/posts/add_steps_numbers_to_tasksequence/</link>
       <pubDate>Sat, 20 Aug 2022 13:36:04 +0200</pubDate>
       
-      <guid>https://raymondzaagsma.github.io/posts/first/</guid>
-      <description></description>
+      <guid>https://raymondzaagsma.github.io/posts/add_steps_numbers_to_tasksequence/</guid>
+      <description>In order to add steps numbers to the task sequence you will have to modify the ZTIUtility.vbs file.
+Make a copy of the ZTIUtility.vbs , then in the original ZTIUtility.vbs replace the code mentioned below.
+Original ReportProgress Function in ZTIUtility.vbs Public Function ReportProgress(sMsg, iPercent) Dim iMaxPercent Dim oProgress Dim uStep Dim uMaxStep CreateEntry &amp;#34;Update progress [ &amp;#34; &amp;amp; iPercent &amp;amp; &amp;#34; ] : &amp;#34; &amp;amp; sMsg , LogTypeVerbose &amp;#39; Try to create the progress UI object On Error Resume Next Set oProgress = CreateObject(&amp;#34;Microsoft.</description>
     </item>
     
     <item>
