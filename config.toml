@@ -13,15 +13,13 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 pygmentsUseClasses = true
 
-disqusShortname = "yourdiscussshortname"
-
 [params]
     author = "Raymond Zaagsma"
     description = "Raymond Zaagsma blog website"
     keywords = "blog"
     info = "Microsoft Endpoint Manager, Azure Virtual Dekstop, Application Deployment, OS Deployment"
     avatarurl = "images/avatar.jpg"
-    footercontent = "Enter a text here."
+    footercontent = "The Deployment Shark"
     fixedbarContent = "Do you want to know me more private?→"
     fixedbarContentAfter = "Thank You! Please share it if you like it→"
 

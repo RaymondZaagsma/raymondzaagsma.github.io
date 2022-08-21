@@ -11,22 +11,22 @@
 
     <meta property="og:site_name" content="The Deployment Shark">
     <meta property="og:title" content="
-  Dirty Environment - The Deployment Shark
+  Adding a delay to MDT Task Sequence - The Deployment Shark
 ">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://raymondzaagsma.github.io/posts/dirty_enviromnet/">
+    <meta property="og:url" content="https://raymondzaagsma.github.io/posts/adding_delay_to-_mdt_tasksequence/">
     <meta property="og:image" content="https://raymondzaagsma.github.io/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="https://raymondzaagsma.github.io/posts/dirty_enviromnet/">
+    <meta name="twitter:site" content="https://raymondzaagsma.github.io/posts/adding_delay_to-_mdt_tasksequence/">
     <meta name="twitter:image" content="https://raymondzaagsma.github.io/">
 
-    <base href="https://raymondzaagsma.github.io/posts/dirty_enviromnet/">
+    <base href="https://raymondzaagsma.github.io/posts/adding_delay_to-_mdt_tasksequence/">
     <title>
-  Dirty Environment - The Deployment Shark
+  Adding a delay to MDT Task Sequence - The Deployment Shark
 </title>
 
-    <link rel="canonical" href="https://raymondzaagsma.github.io/posts/dirty_enviromnet/">
+    <link rel="canonical" href="https://raymondzaagsma.github.io/posts/adding_delay_to-_mdt_tasksequence/">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
@@ -85,44 +85,28 @@
   <section class="container post">
   <article>
     <header>
-      <h1 class="title">Dirty Environment</h1>
+      <h1 class="title">Adding a delay to MDT Task Sequence</h1>
       <h2 class="date">August 20, 2022</h2>
 
       
     </header>
 
-    <p>Sometimes MDT deployments fail and leave the disk in a dirty (failed) state, whem you choose yes and the task sequence failes try the following solution.</p>
-<ol>
-<li>
-<p>Press F8 (opens a CMD window)</p>
-</li>
-<li>
-<p>Unplug any USB drives or other mass storage devices - you should end up with just the internal hard drive left (CD/DVD drives don&rsquo;t count here)</p>
-</li>
-<li>
-<p>In the CMD window enter: DiskPart (launches the Disk Partitioning window)</p>
-</li>
-<li>
-<p>In the DiskPart window enter: list disk (this will show you a list of discs available)</p>
-</li>
-<li>
-<p>If all other drives were unattached then only 1 disk will be listed - note the number associated with the disk (most likely it will be ZERO)</p>
-</li>
-<li>
-<p>In the DiskPart window enter: select disk # (where # is your disc number)</p>
-</li>
-<li>
-<p>In the DiskPart window enter: clean (this will wipe the disk clean of all partitions and therefore clear your dirty deployment)</p>
-</li>
-<li>
-<p>In the DiskPart window enter: exit (should close)</p>
-</li>
-<li>
-<p>In the CMD window enter&quot; exit (should close and reboot)</p>
-</li>
-</ol>
-<p><img src="/images/dirtyenvironment.jpg" alt="Dirty Environment"></p>
-
+    <p>When receiving the error, “A connection to the deployment share (\mdt\DeploymentShare) could not be made.”</p>
+<p><img src="/images/connectionerror.jpg" alt="litetouch.wsf"></p>
+<p>The solution is to add a delay to a task sequence.</p>
+<p>In the deployment share , scripts folder edit the Litetouch.wsf script.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Function ValidateDeployRootWithRecovery
+</span></span><span class="line"><span class="cl">  Dim sARF
+</span></span><span class="line"><span class="cl">  Dim sNetworkErrorHint
+</span></span><span class="line"><span class="cl">  DIm iRetVal
+</span></span><span class="line"><span class="cl">  Dim sLTISuspend
+</span></span><span class="line"><span class="cl">  &#39;Delay wait for DHCP  
+</span></span><span class="line"><span class="cl">  wscript.sleep 5000
+</span></span><span class="line"><span class="cl">  If oUtility.ValidateConnectionEx(oEnvironment.Item(&#34;DeployRoot&#34;), True) = Success then
+</span></span><span class="line"><span class="cl">   ValidateDeployRootWithRecovery = SUCCESS
+</span></span><span class="line"><span class="cl">   exit function
+</span></span><span class="line"><span class="cl">  End if
+</span></span></code></pre></div>
   </article>
 
   <br/>
@@ -138,13 +122,13 @@
     
       <div class="sns-shares sp-sns-shares">
         
-          <a class="sns-share twitter-share" href="https://twitter.com/intent/tweet?original_referer=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fdirty_enviromnet%2f&ref_src=twsrc%5Etfw&text=Dirty%20Environment The%20Deployment%20Shark&tw_p=tweetbutton&url=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fdirty_enviromnet%2f"><i class="fab fa-twitter"></i></a>
+          <a class="sns-share twitter-share" href="https://twitter.com/intent/tweet?original_referer=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fadding_delay_to-_mdt_tasksequence%2f&ref_src=twsrc%5Etfw&text=Adding%20a%20delay%20to%20MDT%20Task%20Sequence The%20Deployment%20Shark&tw_p=tweetbutton&url=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fadding_delay_to-_mdt_tasksequence%2f"><i class="fab fa-twitter"></i></a>
         
         
         
         
         
-          <a class="sns-share linkedIn-share" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fdirty_enviromnet%2f"><i class="fab fa-linkedin"></i></a>
+          <a class="sns-share linkedIn-share" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fadding_delay_to-_mdt_tasksequence%2f"><i class="fab fa-linkedin"></i></a>
         
       </div>
     
@@ -163,13 +147,13 @@
     
       <div class="sns-shares pc-sns-shares">
         
-          <a class="sns-share twitter-share" href="https://twitter.com/intent/tweet?original_referer=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fdirty_enviromnet%2f&ref_src=twsrc%5Etfw&text=Dirty%20Environment The%20Deployment%20Shark&tw_p=tweetbutton&url=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fdirty_enviromnet%2f"><i class="fab fa-twitter"></i></a>
+          <a class="sns-share twitter-share" href="https://twitter.com/intent/tweet?original_referer=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fadding_delay_to-_mdt_tasksequence%2f&ref_src=twsrc%5Etfw&text=Adding%20a%20delay%20to%20MDT%20Task%20Sequence The%20Deployment%20Shark&tw_p=tweetbutton&url=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fadding_delay_to-_mdt_tasksequence%2f"><i class="fab fa-twitter"></i></a>
         
         
         
         
         
-          <a class="sns-share linkedIn-share" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fdirty_enviromnet%2f"><i class="fab fa-linkedin"></i></a>
+          <a class="sns-share linkedIn-share" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3a%2f%2fraymondzaagsma.github.io%2fposts%2fadding_delay_to-_mdt_tasksequence%2f"><i class="fab fa-linkedin"></i></a>
         
       </div>
     
