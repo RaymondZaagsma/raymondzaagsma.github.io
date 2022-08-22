@@ -1,6 +1,7 @@
 baseURL = 'https://raymondzaagsma.github.io/'
 title = 'The Deployment Shark'
 publishDir = "docs"
+googleAnalytics = "G-YVFLZ53VL9"
 
 theme = "coder-portfolio"
 
