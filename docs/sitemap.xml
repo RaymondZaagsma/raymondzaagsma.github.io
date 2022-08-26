@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://raymondzaagsma.github.io/tags/avd/</loc>
+    <lastmod>2022-08-26T07:43:25+02:00</lastmod>
+  </url><url>
+    <loc>https://raymondzaagsma.github.io/posts/avd_aad_sso/</loc>
+    <lastmod>2022-08-26T07:43:25+02:00</lastmod>
+  </url><url>
+    <loc>https://raymondzaagsma.github.io/posts/</loc>
+    <lastmod>2022-08-26T07:43:25+02:00</lastmod>
+  </url><url>
+    <loc>https://raymondzaagsma.github.io/tags/</loc>
+    <lastmod>2022-08-26T07:43:25+02:00</lastmod>
+  </url><url>
+    <loc>https://raymondzaagsma.github.io/</loc>
+    <lastmod>2022-08-26T07:43:25+02:00</lastmod>
+  </url><url>
     <loc>https://raymondzaagsma.github.io/posts/add_steps_numbers_to_tasksequence/</loc>
     <lastmod>2022-08-20T13:36:04+02:00</lastmod>
   </url><url>
@@ -17,21 +32,11 @@
     <loc>https://raymondzaagsma.github.io/posts/install_visual_c&#43;&#43;_redistributables_with_vcredist/</loc>
     <lastmod>2022-08-20T13:36:04+02:00</lastmod>
   </url><url>
-    <loc>https://raymondzaagsma.github.io/posts/</loc>
-    <lastmod>2022-08-20T13:36:04+02:00</lastmod>
-  </url><url>
     <loc>https://raymondzaagsma.github.io/posts/psadt_cheatsheet/</loc>
-    <lastmod>2022-08-20T13:36:04+02:00</lastmod>
-  </url><url>
-    <loc>https://raymondzaagsma.github.io/</loc>
     <lastmod>2022-08-20T13:36:04+02:00</lastmod>
   </url><url>
     <loc>https://raymondzaagsma.github.io/about/</loc>
   </url><url>
-    <loc>https://raymondzaagsma.github.io/categories/</loc>
-  </url><url>
     <loc>https://raymondzaagsma.github.io/contact/</loc>
-  </url><url>
-    <loc>https://raymondzaagsma.github.io/tags/</loc>
   </url>
 </urlset>

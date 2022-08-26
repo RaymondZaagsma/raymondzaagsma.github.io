@@ -13,6 +13,7 @@ pygmentsstyle = "b2"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 pygmentsUseClasses = true
+enableEmoji = true
 
 [params]
     author = "Raymond Zaagsma"
@@ -46,6 +47,10 @@ pygmentsUseClasses = true
     rtl = false
 
     langseparator = "|"
+
+[taxonomies]
+tag = "tags"
+
 
 [[params.social]]
     name = "Github"
