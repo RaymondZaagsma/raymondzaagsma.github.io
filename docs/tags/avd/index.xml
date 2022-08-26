@@ -13,17 +13,14 @@
       <pubDate>Fri, 26 Aug 2022 07:43:25 +0200</pubDate>
       
       <guid>https://raymondzaagsma.github.io/posts/avd_aad_sso/</guid>
-      <description>How to enable Azure Virtual Desktop Hybrid single sign-on.
-login into the Azure Portal.
+      <description>How to enable Azure Virtual Desktop Hybrid single sign-on. NOTE : This currently only work for Windows 11 22h2 insider preview build. login into the Azure Portal.
 Go to Azure Virtual Desktop.
 Open one of the created hostpools.
 Select RDP Properties.
 Configure : RDP will attempt to use Azure AD authentication to sign in
 Go to the advanced tab.
 The property that has been added is : enablerdsaadauth:i:1
-Configure Azure AD Keberos
-Azure AD Kerberos
-# First, ensure TLS 1.2 for PowerShell gallery access.</description>
+Configure Azure AD Keberos</description>
     </item>
     
   </channel>

@@ -9,7 +9,9 @@ thumbnail = "images/tn.png"
 description = ""
 +++
 
-How to enable Azure Virtual Desktop Hybrid single sign-on.  
+## How to enable Azure Virtual Desktop Hybrid single sign-on.  
+
+##### NOTE : This currently only work for Windows 11 22h2 insider preview build.
 
 login into the Azure Portal.  
 Go to Azure Virtual Desktop.  
