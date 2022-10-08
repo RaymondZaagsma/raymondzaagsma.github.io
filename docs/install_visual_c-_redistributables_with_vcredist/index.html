@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Install Visual C&#43;&#43; Redistributables with VcRedist - The Deployment Shark</title><meta name="author" content="Raymond Zaagsma">
+<meta name="author-link" content="">
+<meta name="description" content="This powershell module can download, install or import the Visual C&#43;&#43; Redistributables into MDT. I use this Powershell Module to install VCRedist during the task sequence, i made a small adjustment to the script because the installation of the Powershell Module needs Nuget to work properly.
+I add this powershell script as an application into MDT and add it to the task sequence.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 $installedPackageProvider = Get-PackageProvider if ($installedPackageProvider." /><meta name="keywords" content='MDT' /><meta itemprop="name" content="Install Visual C&#43;&#43; Redistributables with VcRedist">
+<meta itemprop="description" content="This powershell module can download, install or import the Visual C&#43;&#43; Redistributables into MDT. I use this Powershell Module to install VCRedist during the task sequence, i made a small adjustment to the script because the installation of the Powershell Module needs Nuget to work properly.
+I add this powershell script as an application into MDT and add it to the task sequence.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 $installedPackageProvider = Get-PackageProvider if ($installedPackageProvider."><meta itemprop="datePublished" content="2022-08-20T13:36:04+02:00" />
+<meta itemprop="dateModified" content="2022-08-20T13:36:04+02:00" />
+<meta itemprop="wordCount" content="157"><meta itemprop="image" content="https://raymondzaagsma.github.io/logo.png"/>
+<meta itemprop="keywords" content="MDT," /><meta property="og:title" content="Install Visual C&#43;&#43; Redistributables with VcRedist" />
+<meta property="og:description" content="This powershell module can download, install or import the Visual C&#43;&#43; Redistributables into MDT. I use this Powershell Module to install VCRedist during the task sequence, i made a small adjustment to the script because the installation of the Powershell Module needs Nuget to work properly.
+I add this powershell script as an application into MDT and add it to the task sequence.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 $installedPackageProvider = Get-PackageProvider if ($installedPackageProvider." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://raymondzaagsma.github.io/install_visual_c-_redistributables_with_vcredist/" /><meta property="og:image" content="https://raymondzaagsma.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-20T13:36:04+02:00" />
+<meta property="article:modified_time" content="2022-08-20T13:36:04+02:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://raymondzaagsma.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Install Visual C&#43;&#43; Redistributables with VcRedist"/>
+<meta name="twitter:description" content="This powershell module can download, install or import the Visual C&#43;&#43; Redistributables into MDT. I use this Powershell Module to install VCRedist during the task sequence, i made a small adjustment to the script because the installation of the Powershell Module needs Nuget to work properly.
+I add this powershell script as an application into MDT and add it to the task sequence.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 $installedPackageProvider = Get-PackageProvider if ($installedPackageProvider."/>
+<meta name="application-name" content="The Deployment Shark">
+<meta name="apple-mobile-web-app-title" content="The Deployment Shark"><meta name="theme-color" data-light="#ffffff" data-dark="#ffffff" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://raymondzaagsma.github.io/install_visual_c-_redistributables_with_vcredist/" /><link rel="prev" href="https://raymondzaagsma.github.io/psadt_cheatsheet/" /><link rel="next" href="https://raymondzaagsma.github.io/failure_5616/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Install Visual C++ Redistributables with VcRedist",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/raymondzaagsma.github.io\/install_visual_c-_redistributables_with_vcredist\/"
+    },"genre": "posts","keywords": "MDT","wordcount":  157 ,
+    "url": "https:\/\/raymondzaagsma.github.io\/install_visual_c-_redistributables_with_vcredist\/","datePublished": "2022-08-20T13:36:04+02:00","dateModified": "2022-08-20T13:36:04+02:00","license": "Raymond Zaagsma","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Raymond Zaagsma"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="The Deployment Shark"><span class="header-title-text">The Deployment Shark</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                title="The Deployment Shark Posts"
+                
+              >Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                title="The Deployment Shark Tags"
+                
+              >Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                title="The Deployment Shark Categories"
+                
+              >Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/about"
+                title="About The Deployment Shark"
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="The Deployment Shark"><span class="header-title-text">The Deployment Shark</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  title="The Deployment Shark Posts"
+                  
+                >Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  title="The Deployment Shark Tags"
+                  
+                >Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  title="The Deployment Shark Categories"
+                  
+                >Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/about"
+                  title="About The Deployment Shark"
+                  
+                >About</a></li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"></aside>
+
+  <aside class="aside-custom">
+    
+</aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>Install Visual C&#43;&#43; Redistributables with VcRedist</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/images/avatar.png"
+    data-srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x"
+    data-sizes="auto"
+    alt="Raymond Zaagsma"
+    title="Raymond Zaagsma"/>&nbsp;Raymond Zaagsma</span></span>
+          <span class="post-category">included in <a href="/categories/mdt/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> MDT</a></span></div>
+      <div class="post-meta-line"><span title=2022-08-20&#32;13:36:04><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="20-08-2022">20-08-2022</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 157 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> One minute</span>&nbsp;</div>
+    </div><div
+      class="content"
+      id="content"
+      
+      
+    ><p>This powershell module can download, install or import the Visual C++ Redistributables into MDT.
+I use this Powershell Module to install VCRedist during the task sequence, i made a small adjustment to the script because the installation of the Powershell Module needs Nuget to work properly.</p>
+<p>I add this powershell script as an application into MDT and add it to the task sequence.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-v" data-lang="v"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="nv">installedPackageProvider</span> <span class="o">=</span> <span class="nc">Get</span><span class="o">-</span><span class="nc">PackageProvider</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">$</span><span class="nv">installedPackageProvider</span><span class="p">.</span><span class="nc">Name</span> <span class="o">-</span><span class="nv">notmatch</span> <span class="s2">&#34;NuGet&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">Install</span><span class="o">-</span><span class="nc">PackageProvider</span> <span class="o">-</span><span class="nc">Name</span> <span class="nc">NuGet</span> <span class="o">-</span><span class="nv">force</span>
+</span></span><span class="line"><span class="cl">     <span class="nc">Write</span><span class="o">-</span><span class="nc">Host</span><span class="p">(</span><span class="s2">&#34;Install powershell module NuGet&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="nv">path</span> <span class="o">=</span> <span class="s2">&#34;C:\VcRedist&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nc">If</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nv">test</span><span class="o">-</span><span class="nv">path</span> <span class="o">$</span><span class="nv">path</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nc">New</span><span class="o">-</span><span class="nc">Item</span> <span class="o">-</span><span class="nc">ItemType</span> <span class="nc">Directory</span> <span class="o">-</span><span class="nc">Force</span> <span class="o">-</span><span class="nc">Path</span> <span class="o">$</span><span class="nv">path</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nc">Install</span><span class="o">-</span><span class="nc">Module</span> <span class="nc">VcRedist</span> <span class="o">-</span><span class="nc">Force</span> 
+</span></span><span class="line"><span class="cl"><span class="nc">Write</span><span class="o">-</span><span class="nc">Host</span><span class="p">(</span><span class="s2">&#34;Install powershell module VcRedist&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nc">Import</span><span class="o">-</span><span class="nc">Module</span> <span class="nc">VcRedist</span> 
+</span></span><span class="line"><span class="cl"><span class="nc">Write</span><span class="o">-</span><span class="nc">Host</span><span class="p">(</span><span class="s2">&#34;import powershell module VcRedist&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="nc">VcList</span> <span class="o">=</span> <span class="nc">Get</span><span class="o">-</span><span class="nc">VcList</span> <span class="o">|</span> <span class="nc">Get</span><span class="o">-</span><span class="nc">VcRedist</span> <span class="o">-</span><span class="nc">Path</span> <span class="s2">&#34;C:\VcRedist&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="nc">VcList</span> <span class="o">|</span> <span class="nc">Install</span><span class="o">-</span><span class="nc">VcRedist</span> <span class="o">-</span><span class="nc">Path</span> <span class="nc">C</span><span class="p">:</span><span class="err">\</span><span class="nc">VcRedist</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This script is originally created by Aaron Parker, see link below for the original article.</p>
+<p><a href="https://stealthpuppy.com/vcredist-powershell-module/"target="_blank" rel="external nofollow noopener noreferrer">Original Article</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-08-20&#32;13:36:04>Updated on 20-08-2022&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="/install_visual_c-_redistributables_with_vcredist/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://raymondzaagsma.github.io/install_visual_c-_redistributables_with_vcredist/" data-title="Install Visual C&#43;&#43; Redistributables with VcRedist" data-via="RZaagsma" data-hashtags="MDT"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://raymondzaagsma.github.io/install_visual_c-_redistributables_with_vcredist/" data-hashtag="MDT"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://raymondzaagsma.github.io/install_visual_c-_redistributables_with_vcredist/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/mdt/">MDT</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/psadt_cheatsheet/" class="prev" rel="prev" title="PSADT Cheatsheet"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>PSADT Cheatsheet</a>
+      <a href="/failure_5616/" class="next" rel="next" title="Failure 5616">Failure 5616<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.104.3">Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.17-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Raymond Zaagsma</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">Theme FixIt works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":50},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

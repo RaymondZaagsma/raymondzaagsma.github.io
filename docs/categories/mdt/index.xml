@@ -1,0 +1,58 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>MDT - Category - The Deployment Shark</title>
+    <link>https://raymondzaagsma.github.io/categories/mdt/</link>
+    <description>MDT - Category - The Deployment Shark</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Sat, 20 Aug 2022 13:36:04 &#43;0200</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/categories/mdt/" rel="self" type="application/rss+xml" /><item>
+  <title>Add Steps numbers to Task Sequence</title>
+  <link>https://raymondzaagsma.github.io/add_steps_numbers_to_tasksequence/</link>
+  <pubDate>Sat, 20 Aug 2022 13:36:04 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/add_steps_numbers_to_tasksequence/</guid>
+  <description><![CDATA[How to add steps numbers to an MDT task sequence In order to add steps numbers to the task sequence you will have to modify the ZTIUtility.vbs file.
+Make a copy of the ZTIUtility.vbs , then in the original ZTIUtility.vbs replace the code mentioned below.
+Original ReportProgress Function in ZTIUtility.vbs 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 Public Function ReportProgress(sMsg, iPercent) Dim iMaxPercent Dim oProgress Dim uStep Dim uMaxStep CreateEntry &#34;Update progress [ &#34; &amp; iPercent &amp; &#34; ] : &#34; &amp; sMsg , LogTypeVerbose &#39; Try to create the progress UI object On Error Resume Next Set oProgress = CreateObject(&#34;Microsoft.]]></description>
+</item>
+<item>
+  <title>Adding a delay to MDT Task Sequence</title>
+  <link>https://raymondzaagsma.github.io/adding_delay_to-_mdt_tasksequence/</link>
+  <pubDate>Sat, 20 Aug 2022 13:36:04 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/adding_delay_to-_mdt_tasksequence/</guid>
+  <description><![CDATA[When receiving the error, “A connection to the deployment share (\mdt\DeploymentShare) could not be made.”
+The solution is to add a delay to a task sequence.
+In the deployment share , scripts folder edit the Litetouch.wsf script.
+1 2 3 4 5 6 7 8 9 10 11 Function ValidateDeployRootWithRecovery Dim sARF Dim sNetworkErrorHint DIm iRetVal Dim sLTISuspend &#39;Delay wait for DHCP wscript.sleep 5000 If oUtility.ValidateConnectionEx(oEnvironment.Item(&#34;DeployRoot&#34;), True) = Success then ValidateDeployRootWithRecovery = SUCCESS exit function End if ]]></description>
+</item>
+<item>
+  <title>Dirty Environment</title>
+  <link>https://raymondzaagsma.github.io/dirty_enviromnet/</link>
+  <pubDate>Sat, 20 Aug 2022 13:36:04 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/dirty_enviromnet/</guid>
+  <description><![CDATA[Sometimes MDT deployments fail and leave the disk in a dirty (failed) state, whem you choose yes and the task sequence failes try the following solution.
+Press F8 (opens a CMD window)
+Unplug any USB drives or other mass storage devices - you should end up with just the internal hard drive left (CD/DVD drives don&rsquo;t count here)
+In the CMD window enter: DiskPart (launches the Disk Partitioning window)
+In the DiskPart window enter: list disk (this will show you a list of discs available)]]></description>
+</item>
+<item>
+  <title>Failure 5616</title>
+  <link>https://raymondzaagsma.github.io/failure_5616/</link>
+  <pubDate>Sat, 20 Aug 2022 13:36:04 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/failure_5616/</guid>
+  <description><![CDATA[Windows 10 deployments using the Microsoft Deployment Toolkit (MDT) build 8456 fail when used with the Windows Assessment and Deployment Kit (ADK) for Windows 10 and 11. The BIOS firmware type is incorrectly identified as UEFI resulting in failures when refreshing an existing computer with a new version of Windows. When this issue occurs, the smsts.log will record the following entry: UEFI: true Errors resembling the following are then recorded at the end of the process.]]></description>
+</item>
+<item>
+  <title>Install Visual C&#43;&#43; Redistributables with VcRedist</title>
+  <link>https://raymondzaagsma.github.io/install_visual_c-_redistributables_with_vcredist/</link>
+  <pubDate>Sat, 20 Aug 2022 13:36:04 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/install_visual_c-_redistributables_with_vcredist/</guid>
+  <description><![CDATA[This powershell module can download, install or import the Visual C++ Redistributables into MDT. I use this Powershell Module to install VCRedist during the task sequence, i made a small adjustment to the script because the installation of the Powershell Module needs Nuget to work properly.
+I add this powershell script as an application into MDT and add it to the task sequence.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 $installedPackageProvider = Get-PackageProvider if ($installedPackageProvider.]]></description>
+</item>
+</channel>
+</rss>

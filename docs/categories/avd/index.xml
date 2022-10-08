@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>AVD - Category - The Deployment Shark</title>
+    <link>https://raymondzaagsma.github.io/categories/avd/</link>
+    <description>AVD - Category - The Deployment Shark</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Fri, 26 Aug 2022 07:43:25 &#43;0200</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/categories/avd/" rel="self" type="application/rss+xml" /><item>
+  <title>AVD Azure AD SSO</title>
+  <link>https://raymondzaagsma.github.io/avd_aad_sso/</link>
+  <pubDate>Fri, 26 Aug 2022 07:43:25 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/avd_aad_sso/</guid>
+  <description><![CDATA[How to enable Azure Virtual Desktop Hybrid single sign-on. NOTE : This currently only work for Windows 11 22h2 insider preview build. login into the Azure Portal.
+Go to Azure Virtual Desktop.
+Open one of the created hostpools.
+Select RDP Properties.
+Configure : RDP will attempt to use Azure AD authentication to sign in
+Go to the advanced tab.
+The property that has been added is : enablerdsaadauth:i:1
+Configure Azure AD Keberos]]></description>
+</item>
+</channel>
+</rss>
