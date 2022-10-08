@@ -100,6 +100,6 @@ https://github.com/MicrosoftDocs/memdocs/blob/main/memdocs/configmgr/mdt/known-i
 
 ---
 
-> Author:   
+> Author: Raymond Zaagsma  
 > URL: https://raymondzaagsma.github.io/windows_11_22h2_adk/  
 

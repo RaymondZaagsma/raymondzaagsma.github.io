@@ -3,7 +3,7 @@ title: "Windows 11 22H2 ADK"
 subtitle: ""
 date: 2022-10-08T17:57:38+02:00
 draft: false
-author: ""
+author: "Raymond Zaagsma"
 authorLink: ""
 authorEmail: ""
 description: ""
