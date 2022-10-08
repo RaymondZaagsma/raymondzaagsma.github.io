@@ -3,7 +3,15 @@
     <title>MDT - Category - The Deployment Shark</title>
     <link>https://raymondzaagsma.github.io/categories/mdt/</link>
     <description>MDT - Category - The Deployment Shark</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Sat, 20 Aug 2022 13:36:04 &#43;0200</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/categories/mdt/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Sat, 08 Oct 2022 17:57:38 &#43;0200</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/categories/mdt/" rel="self" type="application/rss+xml" /><item>
+  <title>Windows 11 22H2 ADK</title>
+  <link>https://raymondzaagsma.github.io/windows_11_22h2_adk/</link>
+  <pubDate>Sat, 08 Oct 2022 17:57:38 &#43;0200</pubDate>
+  <author>Author</author>
+  <guid>https://raymondzaagsma.github.io/windows_11_22h2_adk/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>Add Steps numbers to Task Sequence</title>
   <link>https://raymondzaagsma.github.io/add_steps_numbers_to_tasksequence/</link>
   <pubDate>Sat, 20 Aug 2022 13:36:04 &#43;0200</pubDate>
