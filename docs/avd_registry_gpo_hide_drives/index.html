@@ -10,7 +10,7 @@
 <meta name="description" content="The Deployment Shark Blog Site" /><meta name="keywords" content='AVD , GPO' /><meta itemprop="name" content="AVD Registry GPO Hide Drives">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2022-11-22T12:50:36+01:00" />
 <meta itemprop="dateModified" content="2022-11-22T12:50:36+01:00" />
-<meta itemprop="wordCount" content="0"><meta itemprop="image" content="https://raymondzaagsma.github.io/images/RegistryCreateNoDrivesValue.png">
+<meta itemprop="wordCount" content="228"><meta itemprop="image" content="https://raymondzaagsma.github.io/images/RegistryCreateNoDrivesValue.png">
 <meta itemprop="keywords" content="AVD , GPO," /><meta property="og:title" content="AVD Registry GPO Hide Drives" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/raymondzaagsma.github.io\/avd_registry_gpo_hide_drives\/"
-    },"genre": "posts","keywords": "AVD , GPO","wordcount":  0 ,
+    },"genre": "posts","keywords": "AVD , GPO","wordcount":  228 ,
     "url": "https:\/\/raymondzaagsma.github.io\/avd_registry_gpo_hide_drives\/","datePublished": "2022-11-22T12:50:36+01:00","dateModified": "2022-11-22T12:50:36+01:00","license": "Raymond Zaagsma","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -154,7 +154,8 @@
   </div>
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
-  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"></aside>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     
@@ -164,16 +165,83 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX">
         <span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>AVD Registry GPO Hide Drives</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      </span></span>
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/images/avatar.png"
+    data-srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x"
+    data-sizes="auto"
+    alt="Raymond Zaagsma"
+    title="Raymond Zaagsma"/>&nbsp;Raymond Zaagsma</span></span>
           <span class="post-category">included in <a href="/categories/avd/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> AVD</a></span></div>
-      <div class="post-meta-line"><span title=2022-11-22&#32;12:50:36><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="22-11-2022">22-11-2022</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 0 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 0 minutes</span>&nbsp;</div>
-    </div><div
+      <div class="post-meta-line"><span title=2022-11-22&#32;12:50:36><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="22-11-2022">22-11-2022</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 228 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 2 minutes</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="true">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-hide-a-drive-using-registry">How to hide a drive using Registry</a></li>
+  </ul>
+</nav></div>
+      </div><div
       class="content"
       id="content"
       
       
-    ></div><div class="post-footer" id="post-footer">
+    ><h2 id="how-to-hide-a-drive-using-registry">How to hide a drive using Registry</h2>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/images/RegistryCreateNoDrivesValue.png"
+    data-srcset="/images/RegistryCreateNoDrivesValue.png, /images/RegistryCreateNoDrivesValue.png 1.5x, /images/RegistryCreateNoDrivesValue.png 2x"
+    data-sizes="auto"
+    alt="Hide Drive Registry"
+    title="Hide Drive Registry"/></p>
+<p>Hide a particular drive on your computer using the Registry.</p>
+<ol>
+<li>Use the Windows key + R keyboard shortcut to open the Run command.</li>
+<li>Type regedit, and click OK to open the registry.</li>
+<li>Browse the following path:HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\ Explorer</li>
+<li>Right-click on the right side, select New, and click on DWORD (32-bit) Value.</li>
+<li>Name the new DWORD NoDrives and press Enter.</li>
+<li>Double-click the newly created DWORD.</li>
+<li>Under &ldquo;Base,&rdquo; select the Decimal option.</li>
+<li>On &ldquo;Value data&rdquo; enter the decimal number that represents the drive letter you want to hide.</li>
+</ol>
+<p>In this blog post, we&rsquo;ll be using value 32, because we&rsquo;re hiding the F: drive.<br>
+If you want to hide multiple drives, you&rsquo;ll need to add the decimal numbers.<br>
+For example, if you&rsquo;re trying to hide drive A:, B: , C: , D: , E: and F:, you&rsquo;ll need to add 1 + 2 + 4 + 8 + 16 + 32, which means that the value you need to enter is 63.<br>
+<br>
+These decimal numbers as reference to hide specific drives:<br>
+A: 1<br>
+B: 2<br>
+C: 4<br>
+D: 8<br>
+E: 16<br>
+F: 32<br>
+G: 64<br>
+H: 128<br>
+I: 256<br>
+J: 512<br>
+K: 1024<br>
+L: 2048<br>
+M: 4096<br>
+N: 8192<br>
+O: 16384<br>
+P: 32768<br>
+Q: 65536<br>
+R: 131072<br>
+S: 262144<br>
+T: 524288<br>
+U: 1048576<br>
+V: 2097152<br>
+W: 4194304<br>
+X: 8388608<br>
+Y: 16777216<br>
+Z: 33554432<br>
+ALL: 67108863</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
