@@ -11,7 +11,6 @@ keywords: ""
 license: ""
 comment: false
 weight: 0
-image : https://raymondzaagsma.github.io/images/AzureVMTimeLocked.png
 
 tags:
 - Azure
