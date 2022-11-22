@@ -23,9 +23,9 @@ hiddenFromSearch: false
 summary: ""
 resources:
 - name: featured-image
-  src: /images/AzureVMTimeLocked.png
+  src: featured-image.jpg
 - name: featured-image-preview
-  src: /images/AzureVMTimeLocked.png
+  src: featured-image-preview.jpg
 
 toc:
   enable: true
