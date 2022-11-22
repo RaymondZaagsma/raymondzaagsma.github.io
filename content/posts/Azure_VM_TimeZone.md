@@ -11,6 +11,8 @@ keywords: ""
 license: ""
 comment: false
 weight: 0
+thumbnail: "/images/AzureVMTimeLocked.png"
+images: [/images/AzureVMTimeLocked.png]
 
 tags:
 - Azure
