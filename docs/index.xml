@@ -3,9 +3,17 @@
     <title>The Deployment Shark</title>
     <link>https://raymondzaagsma.github.io/</link>
     <description>The Deployment Shark Blog Site</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Tue, 22 Nov 2022 08:10:31 &#43;0100</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Tue, 22 Nov 2022 12:50:36 &#43;0100</lastBuildDate>
       <atom:link href="https://raymondzaagsma.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>AVD Registry GPO Hide Drives</title>
+  <link>https://raymondzaagsma.github.io/avd_registry_gpo_hide_drives/</link>
+  <pubDate>Tue, 22 Nov 2022 12:50:36 &#43;0100</pubDate>
+  <author>Author</author>
+  <guid>https://raymondzaagsma.github.io/avd_registry_gpo_hide_drives/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>Azure VM TimeZone</title>
   <link>https://raymondzaagsma.github.io/azure_vm_timezone/</link>
   <pubDate>Tue, 22 Nov 2022 08:10:31 &#43;0100</pubDate>
