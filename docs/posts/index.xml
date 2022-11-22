@@ -3,7 +3,15 @@
     <title>All Posts - The Deployment Shark</title>
     <link>https://raymondzaagsma.github.io/posts/</link>
     <description>All Posts | The Deployment Shark</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Sat, 08 Oct 2022 17:57:38 &#43;0200</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Tue, 22 Nov 2022 08:10:31 &#43;0100</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Azure VM TimeZone</title>
+  <link>https://raymondzaagsma.github.io/azure_vm_timezone/</link>
+  <pubDate>Tue, 22 Nov 2022 08:10:31 &#43;0100</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/azure_vm_timezone/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>Windows 11 22H2 ADK</title>
   <link>https://raymondzaagsma.github.io/windows_11_22h2_adk/</link>
   <pubDate>Sat, 08 Oct 2022 17:57:38 &#43;0200</pubDate>
