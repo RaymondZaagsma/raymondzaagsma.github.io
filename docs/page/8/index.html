@@ -158,7 +158,7 @@
     </a><a href="https://twitter.com/RZaagsma" title="Twitter"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i>
     </a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/dirty_enviromnet/">Dirty Environment</a>
+    <a href="/psadt_cheatsheet/">PSADT Cheatsheet</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
     src="/svg/loading.min.svg"
@@ -166,38 +166,9 @@
     data-srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x"
     data-sizes="auto"
     alt="Raymond Zaagsma"
-    title="Raymond Zaagsma"/>&nbsp;Raymond Zaagsma</span></span>&nbsp;<span class="post-publish" title='2022-08-20 13:36:04'>published on <time datetime="20-08-2022">20-08-2022</time></span>&nbsp;<span class="post-category">included in <a href="/categories/mdt/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> MDT</a></span></div><div class="content">Sometimes MDT deployments fail and leave the disk in a dirty (failed) state, whem you choose yes and the task sequence failes try the following solution.
-Press F8 (opens a CMD window)
-Unplug any USB drives or other mass storage devices - you should end up with just the internal hard drive left (CD/DVD drives don&rsquo;t count here)
-In the CMD window enter: DiskPart (launches the Disk Partitioning window)
-In the DiskPart window enter: list disk (this will show you a list of discs available)</div><div class="post-footer">
-    <a href="/dirty_enviromnet/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/mdt/">MDT</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/failure_5616/">Failure 5616</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/images/avatar.png"
-    data-srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x"
-    data-sizes="auto"
-    alt="Raymond Zaagsma"
-    title="Raymond Zaagsma"/>&nbsp;Raymond Zaagsma</span></span>&nbsp;<span class="post-publish" title='2022-08-20 13:36:04'>published on <time datetime="20-08-2022">20-08-2022</time></span>&nbsp;<span class="post-category">included in <a href="/categories/mdt/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> MDT</a></span></div><div class="content">Windows 10 deployments using the Microsoft Deployment Toolkit (MDT) build 8456 fail when used with the Windows Assessment and Deployment Kit (ADK) for Windows 10 and 11. The BIOS firmware type is incorrectly identified as UEFI resulting in failures when refreshing an existing computer with a new version of Windows. When this issue occurs, the smsts.log will record the following entry: UEFI: true Errors resembling the following are then recorded at the end of the process.</div><div class="post-footer">
-    <a href="/failure_5616/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/mdt/">MDT</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/install_visual_c-_redistributables_with_vcredist/">Install Visual C&#43;&#43; Redistributables with VcRedist</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/images/avatar.png"
-    data-srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x"
-    data-sizes="auto"
-    alt="Raymond Zaagsma"
-    title="Raymond Zaagsma"/>&nbsp;Raymond Zaagsma</span></span>&nbsp;<span class="post-publish" title='2022-08-20 13:36:04'>published on <time datetime="20-08-2022">20-08-2022</time></span>&nbsp;<span class="post-category">included in <a href="/categories/mdt/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> MDT</a></span></div><div class="content">This powershell module can download, install or import the Visual C++ Redistributables into MDT. I use this Powershell Module to install VCRedist during the task sequence, i made a small adjustment to the script because the installation of the Powershell Module needs Nuget to work properly.
-I add this powershell script as an application into MDT and add it to the task sequence.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 $installedPackageProvider = Get-PackageProvider if ($installedPackageProvider.</div><div class="post-footer">
-    <a href="/install_visual_c-_redistributables_with_vcredist/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/mdt/">MDT</a></div></div>
+    title="Raymond Zaagsma"/>&nbsp;Raymond Zaagsma</span></span>&nbsp;<span class="post-publish" title='2022-08-20 13:36:04'>published on <time datetime="20-08-2022">20-08-2022</time></span>&nbsp;<span class="post-category">included in <a href="/categories/psadt/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> PSADT</a></span></div><div class="content">These are code snippits, I frequently use in PSADT - PowerShell App Deployment Toolkit
+Commonly used PSADT env variables 1 2 3 4 5 6 7 8 9 $envCommonDesktop # C:\Users\Public\Desktop $envCommonStartMenuPrograms # C:\ProgramData\Microsoft\Windows\Start Menu\Programs $envProgramFiles # C:\Program Files $envProgramFilesX86 # C:\Program Files (x86) $envProgramData # c:\ProgramData $envUserDesktop # c:\Users\{user currently logged in}\Desktop $envUserStartMenuPrograms # c:\Users\{user currently logged in}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs $envSystemDrive # c: $envWinDir # c:\windows How to load (&ldquo;dotsource&rdquo;) PSADT functions/variables for manual testing (your powershell window must be run as administrator first) 1 2 cd &#34;$path_to_PSADT_folder_youre_working_from&#34; .</div><div class="post-footer">
+    <a href="/psadt_cheatsheet/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/psdat/">PSDAT</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item">
           <span class="page-link">
@@ -207,17 +178,13 @@ I add this powershell script as an application into MDT and add it to the task s
           <span class="page-link" aria-hidden="true">&hellip;</span>
         </li><li class="page-item">
           <span class="page-link">
-            <a href="/page/5/">5</a>
-          </span>
-        </li><li class="page-item">
-          <span class="page-link">
             <a href="/page/6/">6</a>
           </span>
-        </li><li class="page-item active">
+        </li><li class="page-item">
           <span class="page-link">
             <a href="/page/7/">7</a>
           </span>
-        </li><li class="page-item">
+        </li><li class="page-item active">
           <span class="page-link">
             <a href="/page/8/">8</a>
           </span>
