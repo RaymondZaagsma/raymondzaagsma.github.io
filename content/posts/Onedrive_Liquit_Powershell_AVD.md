@@ -51,8 +51,8 @@ OneDrive is a cloud storage service offered by Microsoft, allowing users to stor
 Step 1: Open PowerShell as an administrator
 To begin, you'll need to open PowerShell as an administrator. To do this, search for "PowerShell" in the Start menu, right-click on the PowerShell app, and select "Run as administrator."
 
-Step 2: Download the OneDrive installation files
-Once you've opened PowerShell, you'll need to download the OneDrive installation files. To do this, type the following command and press Enter:
+Step 2: Download and Install OneDrive
+
 
 ```powershell
 $OneDriveClient = "https://go.microsoft.com/fwlink/?linkid=844652"
