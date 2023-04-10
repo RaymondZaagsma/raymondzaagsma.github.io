@@ -1,7 +1,7 @@
 ---
 title: "AVD Registry GPO Hide Drives"
 subtitle: ""
-date: 2022-11-22T12:50:36+01:00
+date: 2022-11-29T12:50:36+01:00
 draft: false
 author: "Raymond Zaagsma"
 authorLink: ""
