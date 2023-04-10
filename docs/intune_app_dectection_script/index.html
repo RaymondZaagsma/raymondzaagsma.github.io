@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Intune App Dectection Script - The Deployment Shark</title><meta name="author" content="Raymond Zaagsma">
+<meta name="author-link" content="">
+<meta name="description" content="The Deployment Shark Blog Site" /><meta name="keywords" content='Intune' /><meta itemprop="name" content="Intune App Dectection Script">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-03-04T11:42:16+02:00" />
+<meta itemprop="dateModified" content="2023-03-04T11:42:16+02:00" />
+<meta itemprop="wordCount" content="678"><meta itemprop="image" content="https://raymondzaagsma.github.io/images/avatar.png"/>
+<meta itemprop="keywords" content="Intune," /><meta property="og:title" content="Intune App Dectection Script" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://raymondzaagsma.github.io/intune_app_dectection_script/" /><meta property="og:image" content="https://raymondzaagsma.github.io/images/avatar.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-04T11:42:16+02:00" />
+<meta property="article:modified_time" content="2023-03-04T11:42:16+02:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://raymondzaagsma.github.io/images/avatar.png"/>
+
+<meta name="twitter:title" content="Intune App Dectection Script"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="The Deployment Shark">
+<meta name="apple-mobile-web-app-title" content="The Deployment Shark"><meta name="theme-color" data-light="#ffffff" data-dark="#ffffff" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://raymondzaagsma.github.io/intune_app_dectection_script/" /><link rel="prev" href="https://raymondzaagsma.github.io/liquit_context_filters/" /><link rel="next" href="https://raymondzaagsma.github.io/avd_pin_connection_bar/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Intune App Dectection Script",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/raymondzaagsma.github.io\/intune_app_dectection_script\/"
+    },"genre": "posts","keywords": "Intune","wordcount":  678 ,
+    "url": "https:\/\/raymondzaagsma.github.io\/intune_app_dectection_script\/","datePublished": "2023-03-04T11:42:16+02:00","dateModified": "2023-03-04T11:42:16+02:00","license": "Raymond Zaagsma","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Raymond Zaagsma"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="The Deployment Shark"><span class="header-title-text">The Deployment Shark</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                title="The Deployment Shark Posts"
+                
+              >Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                title="The Deployment Shark Tags"
+                
+              >Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                title="The Deployment Shark Categories"
+                
+              >Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/about"
+                title="About The Deployment Shark"
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="The Deployment Shark"><span class="header-title-text">The Deployment Shark</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  title="The Deployment Shark Posts"
+                  
+                >Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  title="The Deployment Shark Tags"
+                  
+                >Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  title="The Deployment Shark Categories"
+                  
+                >Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/about"
+                  title="About The Deployment Shark"
+                  
+                >About</a></li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+</aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>Intune App Dectection Script</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/images/avatar.png"
+    data-srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x"
+    data-sizes="auto"
+    alt="Raymond Zaagsma"
+    title="Raymond Zaagsma"/>&nbsp;Raymond Zaagsma</span></span>
+          <span class="post-category">included in <a href="/categories/intune/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Intune</a></span></div>
+      <div class="post-meta-line"><span title=2023-03-04&#32;11:42:16><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="04-03-2023">04-03-2023</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 678 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 4 minutes</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="true">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-intune-application-detection-scripts">What are Intune Application Detection Scripts?</a></li>
+    <li><a href="#how-do-intune-application-detection-scripts-work">How do Intune Application Detection Scripts work?</a></li>
+    <li><a href="#examples">Examples</a>
+      <ul>
+        <li><a href="#a-basic-file-check">A basic file check</a></li>
+        <li><a href="#a-registry-key-checking-both-it-exists-and-the-value-is-correct-good-for-versioning">A registry key (checking both it exists and the value is correct, good for versioning)</a></li>
+        <li><a href="#check-if-a-service-exists">Check if a service exists</a></li>
+        <li><a href="#service-exists-and-is-running">Service exists and is running</a></li>
+        <li><a href="#both-file-and-service-exist">Both file and service exist</a></li>
+        <li><a href="#file-is-of-a-certain-version">File is of a certain version</a></li>
+        <li><a href="#or-even-the-file-was-last-modified-today">Or even the file was last modified today</a></li>
+        <li><a href="#file-is-of-a-certain-version-1">File is of a certain version</a></li>
+        <li><a href="#version-check">Version Check</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><h1 id="intune-application-detection-scripts">Intune Application Detection Scripts</h1>
+<p>Intune Application Detection Scripts are a powerful feature that allow IT professionals to detect and install applications on managed devices using custom scripts. In this blog post, we&rsquo;ll explore what Intune Application Detection Scripts are, how they work, and how to use them to detect and install applications on managed devices.</p>
+<h2 id="what-are-intune-application-detection-scripts">What are Intune Application Detection Scripts?</h2>
+<p>Intune Application Detection Scripts are custom scripts that can be used to detect whether an application is installed on a managed device. These scripts can be used in combination with Intune application deployment policies to automatically install applications on managed devices if they are not already installed. This feature is particularly useful for organizations that need to deploy applications to a large number of devices quickly and efficiently.</p>
+<h2 id="how-do-intune-application-detection-scripts-work">How do Intune Application Detection Scripts work?</h2>
+<p>Intune Application Detection Scripts work by executing a custom script on a managed device to detect whether a specific application is installed. This script can be written in PowerShell, VBScript, or any other scripting language that is supported by Windows. Once the script is executed, the results are sent back to the Intune management console, which then determines whether the application needs to be installed or not.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="a-basic-file-check">A basic file check</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$File = &#34;C:\windows\system32\notepad.exe&#34;
+</span></span><span class="line"><span class="cl">if (Test-Path $File) {
+</span></span><span class="line"><span class="cl">    write-output &#34;Notepad detected, exiting&#34;
+</span></span><span class="line"><span class="cl">    exit 0
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">else {
+</span></span><span class="line"><span class="cl">    exit 1
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="a-registry-key-checking-both-it-exists-and-the-value-is-correct-good-for-versioning">A registry key (checking both it exists and the value is correct, good for versioning)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$Path = &#34;HKLM:\SOFTWARE\7-Zip&#34;
+</span></span><span class="line"><span class="cl">$Name = &#34;Path&#34;
+</span></span><span class="line"><span class="cl">$Type = &#34;STRING&#34;
+</span></span><span class="line"><span class="cl">$Value = &#34;C:\Program Files\7-Zip\&#34;
+</span></span><span class="line"><span class="cl">Try {
+</span></span><span class="line"><span class="cl">    $Registry = Get-ItemProperty -Path $Path -Name $Name -ErrorAction Stop | Select-Object -ExpandProperty $Name
+</span></span><span class="line"><span class="cl">    If ($Registry -eq $Value){
+</span></span><span class="line"><span class="cl">        Write-Output &#34;Detected&#34;
+</span></span><span class="line"><span class="cl">       Exit 0
+</span></span><span class="line"><span class="cl">    } 
+</span></span><span class="line"><span class="cl">    Exit 1
+</span></span><span class="line"><span class="cl">} 
+</span></span><span class="line"><span class="cl">Catch {
+</span></span><span class="line"><span class="cl">    Exit 1
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="check-if-a-service-exists">Check if a service exists</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$service = get-service -name &#34;MozillaMaintenance&#34;
+</span></span><span class="line"><span class="cl">if ($service) {
+</span></span><span class="line"><span class="cl">    write-output &#34;MozillaMaintenance detected, exiting&#34;
+</span></span><span class="line"><span class="cl">    exit 0
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">else {
+</span></span><span class="line"><span class="cl">    exit 1
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="service-exists-and-is-running">Service exists and is running</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$service = get-service -name &#34;MozillaMaintenance&#34;
+</span></span><span class="line"><span class="cl">if ($service.Status -eq &#34;Running&#34;) {
+</span></span><span class="line"><span class="cl">    write-output &#34;MozillaMaintenance detected and running, exiting&#34;
+</span></span><span class="line"><span class="cl">    exit 0
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">else {
+</span></span><span class="line"><span class="cl">   exit 1
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="both-file-and-service-exist">Both file and service exist</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$File = &#34;C:\windows\system32\notepad.exe&#34;
+</span></span><span class="line"><span class="cl">$service = get-service -name &#34;MozillaMaintenance&#34;
+</span></span><span class="line"><span class="cl">if (($service) -and (Test-Path $File)) {
+</span></span><span class="line"><span class="cl">    write-output &#34;MozillaMaintenance and Notepad detected, exiting&#34;
+</span></span><span class="line"><span class="cl">    exit 0
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">else {
+</span></span><span class="line"><span class="cl">    exit 1
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="file-is-of-a-certain-version">File is of a certain version</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$fileversion = (Get-Command C:\Windows\System32\notepad.exe).Version
+</span></span><span class="line"><span class="cl">$build = 19041
+</span></span><span class="line"><span class="cl">$detectedbuild = $fileversion.Build
+</span></span><span class="line"><span class="cl">if ($detectedbuild -eq $build) {
+</span></span><span class="line"><span class="cl">    write-output &#34;Detected&#34;
+</span></span><span class="line"><span class="cl">    exit 0
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">else {
+</span></span><span class="line"><span class="cl">    exit 1
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="or-even-the-file-was-last-modified-today">Or even the file was last modified today</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$filedate = (Get-Item C:\Windows\System32\notepad.exe).LastWriteTime
+</span></span><span class="line"><span class="cl">if ($filedate -gt (Get-Date).AddDays(-1)) {
+</span></span><span class="line"><span class="cl">    write-output &#34;Detected&#34;
+</span></span><span class="line"><span class="cl">    exit 0
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">else {
+</span></span><span class="line"><span class="cl">    exit 1
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="file-is-of-a-certain-version-1">File is of a certain version</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$fileversion = (Get-Command C:\ClickShareApp\ClickShare\ClickShare_native.exe).FileVersionInfo
+</span></span><span class="line"><span class="cl">$build = &#34;4.27.2.4&#34;
+</span></span><span class="line"><span class="cl">$detectedbuild = $fileversion.productversion
+</span></span><span class="line"><span class="cl">if ($detectedbuild -eq $build) {
+</span></span><span class="line"><span class="cl">	write-output &#34;Detected&#34;
+</span></span><span class="line"><span class="cl">	exit 0
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">else {
+</span></span><span class="line"><span class="cl">	exit 1
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="version-check">Version Check</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$APPINSTALL = Get-ItemProperty “HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*” | where {$_.DisplayName -like “*APPNAME*”}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">IF(Test-Path “$APPINSTALL .PSPath”)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">IF($APPINSTALL .DisplayVersion -ge “3.0.279”)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">write-host “Install Success”
+</span></span><span class="line"><span class="cl">exit 0
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ELSE
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">Write-Host “Installed Version Not Match, Upgrade Failed”
+</span></span><span class="line"><span class="cl">exit 1
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ELSEIF(!(Test-Path “$APPINSTALL .PSPath”))
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">Write-Host “Install failed!”
+</span></span><span class="line"><span class="cl">exit 1
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="conclusion">Conclusion</h2>
+<p>Intune Application Detection Scripts are a powerful feature that can save IT professionals time and effort when deploying applications to managed devices. By following the steps outlined above, organizations can easily detect and install applications on managed devices using custom scripts. With Intune Application Detection Scripts, IT professionals can ensure that all managed devices have the necessary applications installed, improving productivity and efficiency across the organization.</p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2023-03-04&#32;11:42:16>Updated on 04-03-2023&nbsp;</span>
+      </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="/intune_app_dectection_script/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://raymondzaagsma.github.io/intune_app_dectection_script/" data-title="Intune App Dectection Script" data-via="RZaagsma" data-hashtags="Intune"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://raymondzaagsma.github.io/intune_app_dectection_script/" data-hashtag="Intune"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://raymondzaagsma.github.io/intune_app_dectection_script/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/intune/">Intune</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/liquit_context_filters/" class="prev" rel="prev" title="Liquit Context Filters"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Liquit Context Filters</a>
+      <a href="/avd_pin_connection_bar/" class="next" rel="next" title="AVD Pin Connection Bar">AVD Pin Connection Bar<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.104.3">Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.17-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Raymond Zaagsma</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">Theme FixIt works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":50},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

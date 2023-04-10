@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>MDT Task Sequence Variables Powershell - The Deployment Shark</title><meta name="author" content="Raymond Zaagsma">
+<meta name="author-link" content="">
+<meta name="description" content="The Deployment Shark Blog Site" /><meta name="keywords" content='MDT' /><meta itemprop="name" content="MDT Task Sequence Variables Powershell">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-02-18T12:12:06+02:00" />
+<meta itemprop="dateModified" content="2023-02-18T12:12:06+02:00" />
+<meta itemprop="wordCount" content="377"><meta itemprop="image" content="https://raymondzaagsma.github.io/images/avatar.png"/>
+<meta itemprop="keywords" content="MDT," /><meta property="og:title" content="MDT Task Sequence Variables Powershell" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://raymondzaagsma.github.io/mdt_task_sequence_variables_powershell/" /><meta property="og:image" content="https://raymondzaagsma.github.io/images/avatar.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-18T12:12:06+02:00" />
+<meta property="article:modified_time" content="2023-02-18T12:12:06+02:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://raymondzaagsma.github.io/images/avatar.png"/>
+
+<meta name="twitter:title" content="MDT Task Sequence Variables Powershell"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="The Deployment Shark">
+<meta name="apple-mobile-web-app-title" content="The Deployment Shark"><meta name="theme-color" data-light="#ffffff" data-dark="#ffffff" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://raymondzaagsma.github.io/mdt_task_sequence_variables_powershell/" /><link rel="prev" href="https://raymondzaagsma.github.io/avd_finding_azure_vm_sku_powershell/" /><link rel="next" href="https://raymondzaagsma.github.io/liquit_context_filters/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "MDT Task Sequence Variables Powershell",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/raymondzaagsma.github.io\/mdt_task_sequence_variables_powershell\/"
+    },"genre": "posts","keywords": "MDT","wordcount":  377 ,
+    "url": "https:\/\/raymondzaagsma.github.io\/mdt_task_sequence_variables_powershell\/","datePublished": "2023-02-18T12:12:06+02:00","dateModified": "2023-02-18T12:12:06+02:00","license": "Raymond Zaagsma","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Raymond Zaagsma"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="The Deployment Shark"><span class="header-title-text">The Deployment Shark</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                title="The Deployment Shark Posts"
+                
+              >Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                title="The Deployment Shark Tags"
+                
+              >Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                title="The Deployment Shark Categories"
+                
+              >Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/about"
+                title="About The Deployment Shark"
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="The Deployment Shark"><span class="header-title-text">The Deployment Shark</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  title="The Deployment Shark Posts"
+                  
+                >Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  title="The Deployment Shark Tags"
+                  
+                >Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  title="The Deployment Shark Categories"
+                  
+                >Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/about"
+                  title="About The Deployment Shark"
+                  
+                >About</a></li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+</aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>MDT Task Sequence Variables Powershell</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/images/avatar.png"
+    data-srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x"
+    data-sizes="auto"
+    alt="Raymond Zaagsma"
+    title="Raymond Zaagsma"/>&nbsp;Raymond Zaagsma</span></span>
+          <span class="post-category">included in <a href="/categories/mdt/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> MDT</a></span></div>
+      <div class="post-meta-line"><span title=2023-02-18&#32;12:12:06><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="18-02-2023">18-02-2023</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 377 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 2 minutes</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="true">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-can-mdt-task-sequence-variables-be-used-as-scripts">How can MDT Task Sequence Variables be used as scripts?</a></li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><h1 id="mdt-task-sequence-variables-passthru-powershell">MDT Task Sequence Variables passthru Powershell</h1>
+<p>MDT Task Sequence Variables are an important component of the MDT (Microsoft Deployment Toolkit) task sequence. They allow administrators to configure and customize the deployment process based on a range of different variables, such as the computer model, the operating system, and more. In this blog post, we&rsquo;ll explore how MDT Task Sequence Variables can be used as scripts to further customize and automate the deployment process.</p>
+<p>What are MDT Task Sequence Variables?</p>
+<p>MDT Task Sequence Variables are variables that can be used to configure and customize the deployment process in MDT. These variables are defined in the task sequence itself and can be used to perform a range of different actions, such as installing applications, configuring settings, and more. Some examples of MDT Task Sequence Variables include:</p>
+<ul>
+<li>%Model%: Specifies the computer model being deployed.</li>
+<li>%OSDComputerName%: Specifies the name of the computer being deployed.</li>
+<li>%OSDDomainName%: Specifies the name of the domain being joined.</li>
+<li>%OSDInstallLanguage%: Specifies the language used for the installation.</li>
+</ul>
+<h2 id="how-can-mdt-task-sequence-variables-be-used-as-scripts">How can MDT Task Sequence Variables be used as scripts?</h2>
+<p>Using Task Sequence variables in a running Task Sequence by script.<br>
+The first step is to create an instance of Microsoft.SMS.TSEnvironment. As this is a COM automation object.</p>
+<p>In the following code example all Task sequence variables are being passthru to powershell to backup the autopilot csv file to a share on the MDT server.</p>
+<p>$SRV =  Servername of MDT server<br>
+$share = Share where autopilot backup files are placed<br>
+$clabel = Customer label, abbreviation of customer name</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Create an object to access the task sequence environment
+</span></span><span class="line"><span class="cl">$tsenv = New-Object -ComObject Microsoft.SMS.TSEnvironment
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"># Convert all of the variables currently in the environment to PowerShell variables
+</span></span><span class="line"><span class="cl">$tsenv.GetVariables() | % { Set-Variable -Name &#34;$_&#34; -Value &#34;$($tsenv.Value($_))&#34; }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&amp; $DEPLOYROOT\applications\get-windowsautopilotinfo\Get-WindowsAutoPilotInfo.ps1 -OutputFile &#34;\\$SRV\$share\$clabel\$env:COMPUTERNAME.csv&#34; -GroupTag &#34;$OrderIdentifier&#34;  
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Conclusion</p>
+<p>MDT Task Sequence Variables are a powerful tool for customizing and automating the deployment process in MDT. By using these variables as scripts, administrators can further customize the deployment process based on a range of different variables, making it easier to deploy and manage Windows operating systems and applications. With the ability to automate complex tasks, administrators can save time and ensure consistent and accurate deployments across their organization.</p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2023-02-18&#32;12:12:06>Updated on 18-02-2023&nbsp;</span>
+      </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="/mdt_task_sequence_variables_powershell/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://raymondzaagsma.github.io/mdt_task_sequence_variables_powershell/" data-title="MDT Task Sequence Variables Powershell" data-via="RZaagsma" data-hashtags="MDT"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://raymondzaagsma.github.io/mdt_task_sequence_variables_powershell/" data-hashtag="MDT"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://raymondzaagsma.github.io/mdt_task_sequence_variables_powershell/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/mdt/">MDT</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/avd_finding_azure_vm_sku_powershell/" class="prev" rel="prev" title="AVD Finding Azure VM SKU Powershell"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>AVD Finding Azure VM SKU Powershell</a>
+      <a href="/liquit_context_filters/" class="next" rel="next" title="Liquit Context Filters">Liquit Context Filters<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.104.3">Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.17-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Raymond Zaagsma</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">Theme FixIt works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":50},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

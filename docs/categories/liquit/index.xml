@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Liquit - Category - The Deployment Shark</title>
+    <link>https://raymondzaagsma.github.io/categories/liquit/</link>
+    <description>Liquit - Category - The Deployment Shark</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Sat, 25 Feb 2023 11:56:47 &#43;0200</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/categories/liquit/" rel="self" type="application/rss+xml" /><item>
+  <title>Liquit Context Filters</title>
+  <link>https://raymondzaagsma.github.io/liquit_context_filters/</link>
+  <pubDate>Sat, 25 Feb 2023 11:56:47 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/liquit_context_filters/</guid>
+  <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

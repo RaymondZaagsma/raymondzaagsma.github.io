@@ -2,20 +2,36 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>https://raymondzaagsma.github.io/categories/avd/</loc><lastmod>2022-11-22T12:50:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://raymondzaagsma.github.io/tags/avd-gpo/</loc><lastmod>2022-11-22T12:50:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://raymondzaagsma.github.io/avd_registry_gpo_hide_drives/</loc><lastmod>2022-11-22T12:50:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://raymondzaagsma.github.io/categories/</loc><lastmod>2022-11-22T12:50:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://raymondzaagsma.github.io/posts/</loc><lastmod>2022-11-22T12:50:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://raymondzaagsma.github.io/tags/</loc><lastmod>2022-11-22T12:50:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://raymondzaagsma.github.io/</loc><lastmod>2022-11-22T12:50:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://raymondzaagsma.github.io/tags/azure/</loc><lastmod>2022-11-22T08:10:31&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://raymondzaagsma.github.io/categories/azure/</loc><lastmod>2022-11-22T08:10:31&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://raymondzaagsma.github.io/azure_vm_timezone/</loc><lastmod>2022-11-22T08:10:31&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://raymondzaagsma.github.io/tags/mdt/</loc><lastmod>2022-10-08T17:57:38&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://raymondzaagsma.github.io/categories/mdt/</loc><lastmod>2022-10-08T17:57:38&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/categories/</loc><lastmod>2023-04-10T10:25:28&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/tags/mdt/</loc><lastmod>2023-04-10T10:25:28&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/categories/mdt/</loc><lastmod>2023-04-10T10:25:28&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/mdt_disable_f8/</loc><lastmod>2023-04-10T10:25:28&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/posts/</loc><lastmod>2023-04-10T10:25:28&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/tags/</loc><lastmod>2023-04-10T10:25:28&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/</loc><lastmod>2023-04-10T10:25:28&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/tags/winget/</loc><lastmod>2023-04-03T10:40:20&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/categories/winget/</loc><lastmod>2023-04-03T10:40:20&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/winget_introduction/</loc><lastmod>2023-04-03T10:40:20&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/tags/intune/</loc><lastmod>2023-03-26T10:51:50&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/categories/intune/</loc><lastmod>2023-03-26T10:51:50&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/intune_dynamic_device_groups/</loc><lastmod>2023-03-26T10:51:50&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/mdt_pause_task_sequence/</loc><lastmod>2023-03-18T11:00:28&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/tags/avd/</loc><lastmod>2023-03-11T11:26:45&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/categories/avd/</loc><lastmod>2023-03-11T11:26:45&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/avd_pin_connection_bar/</loc><lastmod>2023-03-11T11:26:45&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/intune_app_dectection_script/</loc><lastmod>2023-03-04T11:42:16&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/tags/liquit/</loc><lastmod>2023-02-25T11:56:47&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/categories/liquit/</loc><lastmod>2023-02-25T11:56:47&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/liquit_context_filters/</loc><lastmod>2023-02-25T11:56:47&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/mdt_task_sequence_variables_powershell/</loc><lastmod>2023-02-18T12:12:06&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/avd_finding_azure_vm_sku_powershell/</loc><lastmod>2023-02-12T12:37:20&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/avd_rdp_properties/</loc><lastmod>2023-02-05T12:54:53&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/tags/avd-gpo/</loc><lastmod>2022-11-22T12:50:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/avd_registry_gpo_hide_drives/</loc><lastmod>2022-11-22T12:50:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/tags/azure/</loc><lastmod>2022-11-22T08:10:31&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/categories/azure/</loc><lastmod>2022-11-22T08:10:31&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://raymondzaagsma.github.io/azure_vm_timezone/</loc><lastmod>2022-11-22T08:10:31&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://raymondzaagsma.github.io/windows_11_22h2_adk/</loc><lastmod>2022-10-08T17:57:38&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://raymondzaagsma.github.io/tags/avd/</loc><lastmod>2022-08-26T07:43:25&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://raymondzaagsma.github.io/avd_aad_sso/</loc><lastmod>2022-08-26T07:43:25&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://raymondzaagsma.github.io/add_steps_numbers_to_tasksequence/</loc><lastmod>2022-08-20T13:36:04&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://raymondzaagsma.github.io/adding_delay_to-_mdt_tasksequence/</loc><lastmod>2022-08-20T13:36:04&#43;02:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

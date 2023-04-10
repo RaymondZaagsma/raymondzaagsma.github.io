@@ -324,6 +324,18 @@ function Get-Uninstaller {
 ## end of function
 ``` 
 
+##### Test for pending reboot
+```
+$reboot = Get-PendingReboot
+if($reboot.IsSystemRebootPending -eq $true -or $reboot.IsCBServicingRebootPending -eq $true -or $reboot.IsWindowsUpdateRebootPending -eq $true -or $reboot.IsSCCMClientRebootPending -eq $true -or $reboot.IsFileRenameRebootPending -eq $true)
+{
+    #reboot pending, cannot proceed.
+    Show-InstallationPrompt -Message "A reboot is pending on this machine. Please reboot this machine first before installing $installTitle" -ButtonRightText 'OK'
+    Exit-Script -ExitCode 69004 #this code to indicate a reboot is pending on this machine, and installation cannot proceed.
+}
+#End
+```
+
 ---
 
 > Author: Raymond Zaagsma  

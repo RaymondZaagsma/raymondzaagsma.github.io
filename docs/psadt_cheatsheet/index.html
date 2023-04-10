@@ -12,7 +12,7 @@ Commonly used PSADT env variables 1 2 3 4 5 6 7 8 9 $envCommonDesktop # C:\Users
 <meta itemprop="description" content="These are code snippits, I frequently use in PSADT - PowerShell App Deployment Toolkit
 Commonly used PSADT env variables 1 2 3 4 5 6 7 8 9 $envCommonDesktop # C:\Users\Public\Desktop $envCommonStartMenuPrograms # C:\ProgramData\Microsoft\Windows\Start Menu\Programs $envProgramFiles # C:\Program Files $envProgramFilesX86 # C:\Program Files (x86) $envProgramData # c:\ProgramData $envUserDesktop # c:\Users\{user currently logged in}\Desktop $envUserStartMenuPrograms # c:\Users\{user currently logged in}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs $envSystemDrive # c: $envWinDir # c:\windows How to load (&ldquo;dotsource&rdquo;) PSADT functions/variables for manual testing (your powershell window must be run as administrator first) 1 2 cd &#34;$path_to_PSADT_folder_youre_working_from&#34; ."><meta itemprop="datePublished" content="2022-08-20T13:36:04+02:00" />
 <meta itemprop="dateModified" content="2022-08-20T13:36:04+02:00" />
-<meta itemprop="wordCount" content="1612"><meta itemprop="image" content="https://raymondzaagsma.github.io/images/avatar.png"/>
+<meta itemprop="wordCount" content="1690"><meta itemprop="image" content="https://raymondzaagsma.github.io/images/avatar.png"/>
 <meta itemprop="keywords" content="PSDAT," /><meta property="og:title" content="PSADT Cheatsheet" />
 <meta property="og:description" content="These are code snippits, I frequently use in PSADT - PowerShell App Deployment Toolkit
 Commonly used PSADT env variables 1 2 3 4 5 6 7 8 9 $envCommonDesktop # C:\Users\Public\Desktop $envCommonStartMenuPrograms # C:\ProgramData\Microsoft\Windows\Start Menu\Programs $envProgramFiles # C:\Program Files $envProgramFilesX86 # C:\Program Files (x86) $envProgramData # c:\ProgramData $envUserDesktop # c:\Users\{user currently logged in}\Desktop $envUserStartMenuPrograms # c:\Users\{user currently logged in}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs $envSystemDrive # c: $envWinDir # c:\windows How to load (&ldquo;dotsource&rdquo;) PSADT functions/variables for manual testing (your powershell window must be run as administrator first) 1 2 cd &#34;$path_to_PSADT_folder_youre_working_from&#34; ." />
@@ -39,7 +39,7 @@ Commonly used PSADT env variables 1 2 3 4 5 6 7 8 9 $envCommonDesktop # C:\Users
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/raymondzaagsma.github.io\/psadt_cheatsheet\/"
-    },"genre": "posts","keywords": "PSDAT","wordcount":  1612 ,
+    },"genre": "posts","keywords": "PSDAT","wordcount":  1690 ,
     "url": "https:\/\/raymondzaagsma.github.io\/psadt_cheatsheet\/","datePublished": "2022-08-20T13:36:04+02:00","dateModified": "2022-08-20T13:36:04+02:00","license": "Raymond Zaagsma","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -178,7 +178,7 @@ Commonly used PSADT env variables 1 2 3 4 5 6 7 8 9 $envCommonDesktop # C:\Users
     alt="Raymond Zaagsma"
     title="Raymond Zaagsma"/>&nbsp;Raymond Zaagsma</span></span>
           <span class="post-category">included in <a href="/categories/psadt/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> PSADT</a></span></div>
-      <div class="post-meta-line"><span title=2022-08-20&#32;13:36:04><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="20-08-2022">20-08-2022</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 1612 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 8 minutes</span>&nbsp;</div>
+      <div class="post-meta-line"><span title=2022-08-20&#32;13:36:04><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="20-08-2022">20-08-2022</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 1690 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 8 minutes</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="true">
         <div class="details-summary toc-title">
           <span>Contents</span>
@@ -291,6 +291,7 @@ Commonly used PSADT env variables 1 2 3 4 5 6 7 8 9 $envCommonDesktop # C:\Users
                     <li><a href="#usage-once-loaded-get-uninstaller-chrome">usage once loaded: &lsquo;Get-Uninstaller chrome&rsquo;</a></li>
                   </ul>
                 </li>
+                <li><a href="#test-for-pending-reboot">Test for pending reboot</a></li>
               </ul>
             </li>
           </ul>
@@ -938,6 +939,29 @@ Commonly used PSADT env variables 1 2 3 4 5 6 7 8 9 $envCommonDesktop # C:\Users
 </span></span><span class="line"><span class="cl">## end of function
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h5 id="test-for-pending-reboot">Test for pending reboot</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$reboot = Get-PendingReboot
+</span></span><span class="line"><span class="cl">if($reboot.IsSystemRebootPending -eq $true -or $reboot.IsCBServicingRebootPending -eq $true -or $reboot.IsWindowsUpdateRebootPending -eq $true -or $reboot.IsSCCMClientRebootPending -eq $true -or $reboot.IsFileRenameRebootPending -eq $true)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    #reboot pending, cannot proceed.
+</span></span><span class="line"><span class="cl">    Show-InstallationPrompt -Message &#34;A reboot is pending on this machine. Please reboot this machine first before installing $installTitle&#34; -ButtonRightText &#39;OK&#39;
+</span></span><span class="line"><span class="cl">    Exit-Script -ExitCode 69004 #this code to indicate a reboot is pending on this machine, and installation cannot proceed.
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">#End
+</span></span></code></pre></td></tr></table>
+</div>
 </div></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
@@ -970,7 +994,7 @@ Commonly used PSADT env variables 1 2 3 4 5 6 7 8 9 $envCommonDesktop # C:\Users
 </article></main><footer class="footer">
     <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.104.3">Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.17-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
-            <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
+            <span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">
               <a href="/">Raymond Zaagsma</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div></div><div id="mask"></div><noscript>

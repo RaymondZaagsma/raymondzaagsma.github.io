@@ -3,7 +3,31 @@
     <title>MDT - Category - The Deployment Shark</title>
     <link>https://raymondzaagsma.github.io/categories/mdt/</link>
     <description>MDT - Category - The Deployment Shark</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Sat, 08 Oct 2022 17:57:38 &#43;0200</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/categories/mdt/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Mon, 10 Apr 2023 10:25:28 &#43;0200</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/categories/mdt/" rel="self" type="application/rss+xml" /><item>
+  <title>MDT Disable F8</title>
+  <link>https://raymondzaagsma.github.io/mdt_disable_f8/</link>
+  <pubDate>Mon, 10 Apr 2023 10:25:28 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/mdt_disable_f8/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>MDT Pause Task Sequence</title>
+  <link>https://raymondzaagsma.github.io/mdt_pause_task_sequence/</link>
+  <pubDate>Sat, 18 Mar 2023 11:00:28 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/mdt_pause_task_sequence/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>MDT Task Sequence Variables Powershell</title>
+  <link>https://raymondzaagsma.github.io/mdt_task_sequence_variables_powershell/</link>
+  <pubDate>Sat, 18 Feb 2023 12:12:06 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/mdt_task_sequence_variables_powershell/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>Windows 11 22H2 ADK</title>
   <link>https://raymondzaagsma.github.io/windows_11_22h2_adk/</link>
   <pubDate>Sat, 08 Oct 2022 17:57:38 &#43;0200</pubDate>

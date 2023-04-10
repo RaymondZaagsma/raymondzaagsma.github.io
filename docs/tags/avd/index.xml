@@ -3,7 +3,31 @@
     <title>AVD - Tag - The Deployment Shark</title>
     <link>https://raymondzaagsma.github.io/tags/avd/</link>
     <description>AVD - Tag - The Deployment Shark</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Fri, 26 Aug 2022 07:43:25 &#43;0200</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/tags/avd/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Raymond Zaagsma</copyright><lastBuildDate>Sat, 11 Mar 2023 11:26:45 &#43;0200</lastBuildDate><atom:link href="https://raymondzaagsma.github.io/tags/avd/" rel="self" type="application/rss+xml" /><item>
+  <title>AVD Pin Connection Bar</title>
+  <link>https://raymondzaagsma.github.io/avd_pin_connection_bar/</link>
+  <pubDate>Sat, 11 Mar 2023 11:26:45 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/avd_pin_connection_bar/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>AVD Finding Azure VM SKU Powershell</title>
+  <link>https://raymondzaagsma.github.io/avd_finding_azure_vm_sku_powershell/</link>
+  <pubDate>Sun, 12 Feb 2023 12:37:20 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/avd_finding_azure_vm_sku_powershell/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>AVD RDP Properties</title>
+  <link>https://raymondzaagsma.github.io/avd_rdp_properties/</link>
+  <pubDate>Sun, 05 Feb 2023 12:54:53 &#43;0200</pubDate>
+  <author>Raymond Zaagsma</author>
+  <guid>https://raymondzaagsma.github.io/avd_rdp_properties/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>AVD Azure AD SSO</title>
   <link>https://raymondzaagsma.github.io/avd_aad_sso/</link>
   <pubDate>Fri, 26 Aug 2022 07:43:25 &#43;0200</pubDate>
