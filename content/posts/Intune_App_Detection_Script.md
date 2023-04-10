@@ -1,5 +1,5 @@
 ---
-title: "Intune App Dectection Script"
+title: "Intune App Detection Script"
 subtitle: ""
 date: 2023-03-04T11:42:16+02:00
 draft: False
